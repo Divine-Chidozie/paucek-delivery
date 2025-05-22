@@ -1,0 +1,248 @@
+/* 
+
+------ TYPOGRAPHY ------
+
+FONT SIZES
+12px / 16px / 20px / 24px / 32px / 40px / 62px
+
+FONT WEIGHTS
+400 / 700
+
+LINE HEIGHTS 
+1.2 / 1.5
+
+LETTER SPACING 
+0 / -2PX
+
+FONT FAMILY
+poppins
+
+------ COLORS ------
+
+PRIMARY
+Base: #339af0 (Sky Blue)
+Tint: #d0ebff (Arctic)
+Shade: #1c7ed6 (Deep Sea)
+
+SECONDARY
+Base: #9775fa (Lavender)
+Tint: #e5dbff (Moonlight iris)
+Shade: #7048c8 (Velvet Night)
+
+TERTIARY
+Base: #ff922b (Pumpkin)
+Tint: #ffe8cc (Dawn)
+Shade: #f76707 (Lava)
+
+GRAY
+Base: #495057 (Slate)
+Tint: #f1f3f5 (Pebble)
+Shade: #212529 (Graphite)
+white: #ffffff (white)
+black: #000000 (black)
+
+
+------- BORDER RADIUS -------
+4px / 8px / 12px
+
+*/
+
+/* ------------- GLOBAL STYLES ------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #333;
+}
+html {
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  color: #212529;
+}
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 6.2rem;
+}
+h2 {
+  font-size: 4.8rem;
+}
+h3 {
+  font-size: 4rem;
+}
+h4 {
+  font-size: 3.2rem;
+}
+h5 {
+  font-size: 2.4rem;
+}
+p,
+a,
+.small-text {
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+}
+p {
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  display: inline-block;
+}
+ul {
+  list-style: none;
+}
+span {
+  display: inline-block;
+}
+.small-text {
+  font-size: 1.2rem;
+}
+
+/* ------------- COMPONENTS ------------- */
+
+.btn {
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 1.5rem 3rem;
+  border-radius: 8px;
+}
+
+.btn-primary:link,
+.btn-primary:visited {
+  color: #ffffff;
+  background-color: #339af0;
+  border: 2px solid #339af0;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  color: #ffffff;
+  background: #1c7ed6;
+  border: 2px solid #1c7ed6;
+}
+.btn-primary-outline:link,
+.btn-primary-outline:visited {
+  color: #339af0;
+  background-color: #ffffff;
+  border: 2px solid #339af0;
+}
+.btn-primary-outline:hover,
+.btn-primary-outline:active {
+  color: #339af0;
+  background-color: #ffffff;
+  border: 2px solid #1c7ed6;
+}
+.btn-secondary:link,
+.btn-secondary:visited {
+  color: #ffffff;
+  background-color: #9775fa;
+  border: 2px solid #9775fa;
+}
+.btn-secondary:hover,
+.btn-secondary:active {
+  color: #ffffff;
+  background-color: #7048e8;
+  border: 2px solid #7048e8;
+}
+.highlight {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.highlight-primary {
+  background-color: #339af0;
+}
+.highlight-secondary {
+  background-color: #9775fa;
+}
+.highlight-tertiary {
+  background-color: #ff922b;
+}
+.logo-md {
+  width: 40px;
+}
+.logo-sm {
+  width: 40px;
+}
+/* ------------- SECTIONS ------------- */
+
+/* -----NAVBAR ----- */
+.navbar {
+  margin-bottom: 20rem;
+}
+
+/* ----- HERO SECTION ----- */
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 30rem;
+}
+.hero-heading {
+  margin-bottom: 1rem;
+}
+.hero-paragraph {
+  margin-bottom: 5rem;
+}
+
+/* ----- FEATURES SECTION ----- */
+.features-section {
+  margin-bottom: 30rem;
+}
+
+.features-main-heading {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+.feature-headings {
+  margin-bottom: 2rem;
+}
+.feature-img {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* ----- CTA SECTION ----- */
+
+.cta-section {
+  margin-bottom: 30rem;
+}
+.cta-card {
+  text-align: center;
+  background-color: #339af0;
+  max-width: 1000px;
+  padding: 10rem 20rem;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.cta-heading {
+  margin-bottom: 3rem;
+}
+/* ----- FOOTER SECTION ----- */
+
+.footer-section {
+  text-align: center;
+}
+.social-icons {
+  width: 20px;
+}
