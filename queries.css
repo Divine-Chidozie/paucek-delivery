@@ -57,6 +57,9 @@
   .hero-heading-break {
     display: none;
   }
+  .features-main-heading {
+    margin-bottom: 10rem;
+  }
   .hero-section {
     height: auto;
   }
@@ -66,5 +69,9 @@
   .feature-img-swap-order {
     grid-row: auto;
     grid-column: auto;
+  }
+  .cta-card {
+    padding: 8rem 16rem;
+    text-align: center;
   }
 }

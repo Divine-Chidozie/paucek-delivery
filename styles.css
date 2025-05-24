@@ -132,7 +132,7 @@ span {
 .btn {
   font-size: 1.6rem;
   text-decoration: none;
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem;
   border-radius: 8px;
 }
 
@@ -196,15 +196,17 @@ span {
   background-color: #ff922b;
 }
 .logo-md {
-  width: 40px;
+  width: 30px;
+  border-radius: 15px;
 }
 .logo-sm {
-  width: 40px;
+  width: 30px;
+  border-radius: 15px;
 }
 .chat-container {
-  height: 7rem;
-  width: 7rem;
-  background-color: #d0ebff;
+  height: 5rem;
+  width: 5rem;
+  background-color: #339af0;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -214,9 +216,13 @@ span {
   right: 2rem;
   cursor: pointer;
 }
+.chat-container:hover {
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+}
 .chat-icon {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
 }
 .beta {
   position: relative;
@@ -279,7 +285,7 @@ span {
 
 /* ----- FEATURES SECTION ----- */
 .features-section {
-  margin-bottom: 30rem;
+  margin-bottom: 20rem;
 }
 
 .features-main-heading {
@@ -309,7 +315,7 @@ span {
 /* ----- CTA SECTION ----- */
 
 .cta-section {
-  margin-bottom: 30rem;
+  margin-bottom: 10rem;
   display: flex;
   justify-content: center;
 }
@@ -317,12 +323,13 @@ span {
   text-align: center;
   background-color: #339af0;
   max-width: 1000px;
-  padding: 10rem 20rem;
+  padding: 7rem 20rem;
   border-radius: 20px;
 }
 .cta-heading {
   margin-bottom: 3rem;
   color: #ffffff;
+  font-size: 3rem;
 }
 /* ----- FOOTER SECTION ----- */
 
@@ -331,6 +338,7 @@ span {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 5rem;
 }
 .social-icons-container {
   display: flex;
