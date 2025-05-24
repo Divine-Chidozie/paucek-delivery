@@ -108,8 +108,14 @@ p {
 }
 a {
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   display: inline-block;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #495057;
 }
 ul {
   list-style: none;
@@ -141,6 +147,9 @@ span {
   color: #ffffff;
   background: #1c7ed6;
   border: 2px solid #1c7ed6;
+  transform: scale(1.05, 1.05);
+  box-shadow: 0px 3px 6px #495057;
+  transition: 0.5s;
 }
 .btn-primary-outline:link,
 .btn-primary-outline:visited {
@@ -153,6 +162,9 @@ span {
   color: #339af0;
   background-color: #ffffff;
   border: 2px solid #1c7ed6;
+  transform: scale(1.05, 1.05);
+  box-shadow: 0px 3px 6px #495057;
+  transition: 0.5s;
 }
 .btn-secondary:link,
 .btn-secondary:visited {
@@ -165,6 +177,9 @@ span {
   color: #ffffff;
   background-color: #7048e8;
   border: 2px solid #7048e8;
+  transform: scale(1.05, 1.05);
+  box-shadow: 0px 3px 6px #495057;
+  transition: 0.5s;
 }
 .highlight {
   color: #ffffff;
@@ -185,6 +200,38 @@ span {
 }
 .logo-sm {
   width: 40px;
+}
+.chat-container {
+  height: 7rem;
+  width: 7rem;
+  background-color: #d0ebff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.chat-icon {
+  width: 5rem;
+  height: 5rem;
+}
+.beta {
+  position: relative;
+}
+.beta::after {
+  content: "beta";
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2rem;
+  background-color: #ff922b;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transform: translate(70%, -70%);
 }
 /* ------------- SECTIONS ------------- */
 
@@ -223,6 +270,7 @@ span {
 }
 .hero-paragraph {
   margin-bottom: 5rem;
+  text-align: center;
 }
 .hero-btn-container {
   display: flex;
@@ -238,6 +286,18 @@ span {
   text-align: center;
   margin-bottom: 8rem;
 }
+.features-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 15rem;
+  column-gap: 5rem;
+  justify-items: center;
+  align-items: center;
+}
+.feature-img-swap-order {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
 .feature-headings {
   margin-bottom: 2rem;
 }
@@ -250,6 +310,8 @@ span {
 
 .cta-section {
   margin-bottom: 30rem;
+  display: flex;
+  justify-content: center;
 }
 .cta-card {
   text-align: center;
@@ -257,10 +319,10 @@ span {
   max-width: 1000px;
   padding: 10rem 20rem;
   border-radius: 20px;
-  margin: 0 auto;
 }
 .cta-heading {
   margin-bottom: 3rem;
+  color: #ffffff;
 }
 /* ----- FOOTER SECTION ----- */
 
@@ -280,4 +342,7 @@ span {
 }
 .social-icons {
   width: 20px;
+}
+.heart-icon {
+  color: #9775fa;
 }
