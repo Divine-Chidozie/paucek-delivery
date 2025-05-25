@@ -1,43 +1,50 @@
 const myForm = document.getElementById("my-form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
+const userName = document.getElementById("username");
+const passWord = document.getElementById("password");
 
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // Clear previous errors
+  const usernameError = document.getElementById("username-error");
+  usernameError.textContent = "";
+  const passwordError = document.getElementById("password-error");
+  passwordError.textContent = "";
+
+  // Clear errors on input
+  userName.addEventListener("input", () => {
+    usernameError.textContent = "";
+  });
+  passWord.addEventListener("input", () => {
+    passwordError.textContent = "";
+  });
+
+  const username = userName.value.trim();
+  const password = passWord.value.trim();
+
   let isValid = true;
-  const username = usernameInput.value.trim();
-  const password = passwordInput.value.trim();
 
   if (!username) {
-    document.getElementById("username-error").textContent =
-      "please enter your username";
-    isValid = false;
+    usernameError.textContent = "Please enter your username";
+    isValid = false; // Only set false here when invalid
   }
+
   if (!password) {
-    document.getElementById("password-error").textContent =
-      "please enter your password";
-    isValid = false;
+    passwordError.textContent = "Please enter your password";
+    isValid = false; // Only set false here when invalid
   }
+
   if (isValid) {
     const formData = {
       username: username,
       password: password,
     };
-
     fetch("/api/form/login", {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    });
   }
 });

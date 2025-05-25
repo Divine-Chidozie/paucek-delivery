@@ -69,23 +69,26 @@ input {
   outline: none;
   margin: 10px 0;
 }
+input[type="text"] {
+  caret-color: #339af0;
+}
+input[type="password"] {
+  caret-color: #339af0;
+}
 .btn {
   width: 100%;
   font-size: 1.6rem;
   text-decoration: none;
   padding: 1rem 3rem;
-  color: #339af0;
-  background-color: #ffffff;
+  /* color: #339af0; */
+  color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: #339af0;
   border: 2px solid #339af0;
   cursor: pointer;
+  font-weight: 600;
 }
-.btn-primary:hover,
-.btn-primary:active {
-  color: #339af0;
-  background-color: #ffffff;
-  border: 2px solid #1c7ed6;
-  transition: 0.5s;
-}
+
 #username-error {
   color: #e10202;
   font-size: 1.1rem;
