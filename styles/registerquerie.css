@@ -42,30 +42,18 @@ html {
 
 /* For small devices like phones (576px or less) */
 @media (max-width: 576px) {
-  html {
-    font-size: 37.5%; /* 1rem = 6px */
-  }
-
-  .form-container {
-    width: 100% !important;
-    padding: 1rem;
-  }
-
-  .mediaForm {
-    font-size: 2rem;
-  }
-
-  form input,
-  form select {
-    font-size: 1.6rem;
-    padding: 0.6rem;
-  }
-
   .container-heading {
-    font-size: 2rem;
+    font-size: 24px;
   }
 
-  .register {
-    font-size: 1.4rem;
+  .container {
+    padding: 4rem;
+  }
+  form {
+    padding: 1.5rem;
+  }
+  .register,
+  .register-link {
+    font-size: 16px;
   }
 }

@@ -1,73 +1,59 @@
 /* LG - SMALL LAPTOPS: 1024px - 1280px */
 @media (max-width: 72rem) {
-  /* 1152px */
   html {
     font-size: 56.25%; /* 9px */
   }
   .form-container {
     width: 80%;
-    max-width: 1000px;
+    max-width: 1200px;
   }
 }
 
-/* MD - TABLETS: 768px - 1024px */
+/* MD - TABLETS: 768PX - 1024PX */
 @media (max-width: 51rem) {
-  /* 816px */
   html {
     font-size: 50%; /* 8px */
   }
   .form-container {
-    width: 90%;
-    max-width: 800px;
-    padding: 2rem;
+    width: 80%;
+    max-width: 1200px;
   }
 }
 
-/* SM - PHONE LANDSCAPE: 576px - 768px */
+/* SM - PHONE LANDSCAPE: 576PX - 768PX */
 @media (max-width: 43rem) {
-  /* 688px */
   html {
     font-size: 43.75%; /* 7px */
   }
   .form-container {
-    width: 95%;
-    max-width: 600px;
-    padding: 1.5rem;
-  }
-
-  input,
-  label {
-    font-size: 1.4rem;
+    width: 80%;
+    max-width: 1200px;
   }
 }
 
 /* XS - PHONE PORTRAIT: < 576px */
 @media (max-width: 34rem) {
-  /* 544px */
   html {
-    font-size: 37.5%; /* 6px */
+    font-size: 45%; /* 6px */
   }
-
   .form-container {
-    width: 100%;
-    padding: 1rem;
+    width: 80%;
+    max-width: 100%;
   }
 
   h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.4rem; /* override to keep heading readable */
+    font-weight: 600;
   }
-
-  input,
-  label {
-    font-size: 1.2rem;
+  .register {
+    font-size: 1, 5rem;
+    /* Keeping it inline: No block, no center, no margin-top */
+    display: inline;
+    text-align: left;
   }
-
-  .register,
-  .register-link {
-    font-size: 1.1rem;
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
+  .register-link:link,
+  .register-link:active,
+  .register-link:visited {
+    font-size: 1.5rem;
   }
 }
