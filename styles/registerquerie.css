@@ -1,0 +1,71 @@
+/* Base styles for large screens */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+/* For devices with width 1200px or less */
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%; /* 1rem = 9px */
+  }
+}
+
+/* For devices with width 992px or less */
+@media (max-width: 992px) {
+  html {
+    font-size: 50%; /* 1rem = 8px */
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
+
+/* For devices with width 768px or less */
+@media (max-width: 768px) {
+  .form-container {
+    width: 100% !important;
+    padding: 1.5rem;
+  }
+
+  form input,
+  form select {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .container-heading {
+    font-size: 2.4rem;
+  }
+}
+
+/* For small devices like phones (576px or less) */
+@media (max-width: 576px) {
+  html {
+    font-size: 37.5%; /* 1rem = 6px */
+  }
+
+  .form-container {
+    width: 100% !important;
+    padding: 1rem;
+  }
+
+  .mediaForm {
+    font-size: 2rem;
+  }
+
+  form input,
+  form select {
+    font-size: 1.6rem;
+    padding: 0.6rem;
+  }
+
+  .container-heading {
+    font-size: 2rem;
+  }
+
+  .register {
+    font-size: 1.4rem;
+  }
+}

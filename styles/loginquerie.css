@@ -1,65 +1,73 @@
 /* LG - SMALL LAPTOPS: 1024px - 1280px */
-
 @media (max-width: 72rem) {
-  /* 1150px / 16px = 72rem */
-  /* 73rem x 16px = 1152px */
-
+  /* 1152px */
   html {
-    font-size: 56.25%;
-    /* 9px / 16px 56/25% */
+    font-size: 56.25%; /* 9px */
   }
   .form-container {
     width: 80%;
-    max-width: 1200px;
+    max-width: 1000px;
   }
 }
 
-/* MD - TABLETS: 768PX - 1024PX */
-
+/* MD - TABLETS: 768px - 1024px */
 @media (max-width: 51rem) {
-  /* 815px / 16px = 51rem */
-  /* 51rem x 16px = 815px */
-
+  /* 816px */
   html {
-    font-size: 50%;
+    font-size: 50%; /* 8px */
   }
   .form-container {
-    width: 80%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 800px;
+    padding: 2rem;
   }
 }
 
-/* SM - PHONE LANDSCAPE: 576PX - 768PX */
-
+/* SM - PHONE LANDSCAPE: 576px - 768px */
 @media (max-width: 43rem) {
-  /* 680px . 16px = 43rem */
-  /* 43px . 16px = 688px */
-
+  /* 688px */
   html {
-    font-size: 43.75%;
+    font-size: 43.75%; /* 7px */
   }
   .form-container {
-    width: 80%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 600px;
+    padding: 1.5rem;
+  }
+
+  input,
+  label {
+    font-size: 1.4rem;
   }
 }
 
-/* XS - PHONE PORTRAINT: < 576px */
-
+/* XS - PHONE PORTRAIT: < 576px */
 @media (max-width: 34rem) {
+  /* 544px */
   html {
-    font-size: 37.5%;
+    font-size: 37.5%; /* 6px */
   }
+
   .form-container {
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    padding: 1rem;
   }
-  .register {
-    font-size: 12px;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
   }
-  .register-link:link,
-  .register-link:active,
-  .register-link:visited {
-    font-size: 12px;
+
+  input,
+  label {
+    font-size: 1.2rem;
+  }
+
+  .register,
+  .register-link {
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
   }
 }
