@@ -28,19 +28,18 @@ html {
   box-shadow: 0px 3px 6px #495057;
   border-radius: 8px;
   text-align: center;
-  /* margin: 100px auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 30px; */
   justify-content: center;
   max-width: 800px;
   width: 40%;
-  padding-left: 1.5rem; /* add left padding */
-  padding-right: 1.5rem; /* add right padding */
-  box-sizing: border-box; /* so padding does not increase width */
-  margin-left: auto; /* center horizontally */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+  margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
 }
 h1 {
   font-size: 3rem;
@@ -89,15 +88,16 @@ input[type="password"] {
   font-size: 1.6rem;
   text-decoration: none;
   padding: 1rem 3rem;
-  /* color: #339af0; */
   color: #ffffff;
-  /* background-color: #ffffff; */
   background-color: #339af0;
   border: 2px solid #339af0;
   cursor: pointer;
   font-weight: 600;
 }
-
+.btn:hover {
+  background-color: #339bf0e1;
+  border: 2px solid #339af0;
+}
 #username-error {
   color: #e10202;
   font-size: 1.1rem;
@@ -115,7 +115,7 @@ input[type="password"] {
 .register-link:link,
 .register-link:active,
 .register-link:visited {
-  color: #495057;
+  color: #339af0;
   margin: 0 5px;
   text-decoration: none;
   font-size: 13px;

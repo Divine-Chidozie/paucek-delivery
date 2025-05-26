@@ -1,12 +1,7 @@
-/* Base styles for large screens */
-html {
-  font-size: 62.5%; /* 1rem = 10px */
-}
-
 /* For devices with width 1200px or less */
 @media (max-width: 1200px) {
   html {
-    font-size: 56.25%; /* 1rem = 9px */
+    font-size: 56.25%; /* 9px */
   }
 }
 

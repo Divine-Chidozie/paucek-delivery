@@ -1,5 +1,5 @@
 body {
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
@@ -11,15 +11,13 @@ html {
   font-size: 62.5%;
 }
 .form-container {
-  margin: 120px auto;
-  padding: 2rem;
-  /* border: 1px solid #495057; */
+  margin: 50px auto;
+  padding: 1.5rem;
   box-shadow: 0px 3px 6px #495057;
   border-radius: 8px;
 }
 .container-heading {
   margin: 20px 0;
-  font-size: 2rem;
   color: #339af0;
   line-height: 1.5;
   letter-spacing: -2px;
@@ -34,6 +32,7 @@ form {
 label {
   font-size: 14px;
   margin-top: 15px;
+  font-weight: 550;
 }
 input {
   width: 100%;
@@ -47,40 +46,54 @@ input {
   width: 100%;
   padding: 8px;
   font-size: 14px;
+  outline: none;
+  margin: 2rem 0 1.5rem 0;
 }
-
 .inline {
   width: unset;
   margin: 0 0.5em 0 0;
   vertical-align: middle;
-  font-size: 14px;
 }
 .btn {
   width: 100%;
-  font-size: 14px;
+  font-size: 1.6rem;
   text-decoration: none;
-  padding: 0.5rem 3rem;
-  color: #495057;
-  background-color: #ffffff;
-  border: 2px solid #495057;
+  padding: 1rem 3rem;
+  color: #ffffff;
+  background-color: #339af0;
+  border: 2px solid #339af0;
   cursor: pointer;
+  font-weight: 600;
+  margin-top: 2rem;
 }
-.btn-primary:hover,
-.btn-primary:active {
-  color: #495057;
-  background-color: #ffffff;
-  border: 2px solid #495057;
-  transition: 0.5s;
+.btn:hover {
+  background-color: #339bf0e1;
+  border: 2px solid #339af0;
 }
 .register {
   color: #495057;
   font-size: 13px;
+  margin: 10px 0;
 }
 .register-link:link,
 .register-link:active,
 .register-link:visited {
-  color: #495057;
+  color: #339af0;
   margin: 0 5px;
   text-decoration: none;
   font-size: 13px;
+}
+#firstname-error,
+#lastname-error,
+#error-password,
+#email-error,
+#account-type-error,
+#checkbox-error {
+  color: #e10202;
+  font-size: 1.4rem;
+  margin-top: -8px;
+  margin-left: 2px;
+}
+#checkbox-error {
+  margin-top: 8px;
 }

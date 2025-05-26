@@ -1,12 +1,6 @@
-const registerForm = document.getElementById("register");
+// const registerForm = document.getElementById("register");
 const chatLogo = document.getElementById("chat-icon-logo");
 const requestPickUp = document.getElementById("request-pickup");
-
-registerForm.addEventListener("click", function () {
-  alert(
-    "Register functionality is still in progress. Please check back later."
-  );
-});
 
 requestPickUp.addEventListener("click", () => {
   alert("Pick up location processing. Please check back later...");

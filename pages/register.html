@@ -9,12 +9,7 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+
     <link rel="stylesheet" href="/styles/register.css" />
 
     <link rel="stylesheet" href="/styles/registerquerie.css" />
@@ -23,26 +18,32 @@
   <body>
     <div class="container">
       <div class="text-center w-50 p-3 form-container mediaForm">
-        <h1 class="container-heading">Register here 🙂</h1>
-        <form action="">
-          <label for="firstname">firstname</label>
-          <input type="text" id="firstname" name="firstname" />
+        <h1 class="container-heading">Register here</h1>
 
-          <label for="lastname">lastname</label>
-          <input type="text" id="lastname" name="lastname" />
+        <form action="" id="registration-form">
+          <label for="firstname">firstname *</label>
+          <input id="firstname" type="text" name="firstname" />
+          <span id="firstname-error"></span>
 
-          <label for="password">password</label>
-          <input type="password" id="password" name="password" />
+          <label for="lastname">lastname *</label>
+          <input id="lastname" type="text" name="lastname" />
+          <span id="lastname-error"></span>
 
-          <label for="email">email</label>
-          <input type="email" id="email" name="email" />
+          <label for="password">password *</label>
+          <input id="password" type="password" name="password" />
+          <span id="error-password"></span>
 
-          <select name="account-type" id="account-type">
-            <option value="">Select account type</option>
+          <label for="email">email *</label>
+          <input id="email" type="email" name="email" />
+          <span id="email-error"></span>
+
+          <select id="account-type" name="account-type">
+            <option value="">-- Select account type --</option>
             <option value="user">User</option>
             <option value="rider">Rider</option>
             <option value="marchent">Marchent</option>
           </select>
+          <span id="account-type-error"></span>
           <label for="checkbox">
             <input
               id="checkbox"
@@ -50,8 +51,12 @@
               type="checkbox"
               name="checkbox"
             />
-            I accept the Terms & Conditions
+            I accept the terms & conditions
           </label>
+          <div class="error-check">
+            <span id="checkbox-error"></span>
+          </div>
+
           <input class="btn btn-primary" type="submit" value="Register" />
 
           <div class="register">
@@ -70,5 +75,6 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
+    <script src="/scripts/register.js"></script>
   </body>
 </html>
