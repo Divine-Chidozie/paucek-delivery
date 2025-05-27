@@ -100,13 +100,15 @@ input[type="password"] {
 }
 #username-error {
   color: #e10202;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin-top: -8px;
+  margin-left: 2px;
 }
 #password-error {
   color: #e10202;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin-top: -8px;
+  margin-left: 2px;
 }
 .register {
   color: #495057;
