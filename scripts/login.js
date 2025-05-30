@@ -25,13 +25,13 @@ myForm.addEventListener("submit", (e) => {
   let isValid = true;
 
   if (!username) {
-    usernameError.textContent = "Please enter your username";
-    isValid = false; // Only set false here when invalid
+    usernameError.textContent = "Username is required";
+    isValid = false;
   }
 
   if (!password) {
     passwordError.textContent = "Please enter your password";
-    isValid = false; // Only set false here when invalid
+    isValid = false;
   }
 
   if (isValid) {
@@ -39,6 +39,7 @@ myForm.addEventListener("submit", (e) => {
       username: username,
       password: password,
     };
+
     fetch("/api/form/login", {
       method: "POST",
       headers: {

@@ -120,3 +120,12 @@ registrationForm.addEventListener("submit", (e) => {
     });
   }
 });
+
+// Object
+const user = {
+  name: "Harley",
+  age: 20,
+  isVerified: true, // boolean
+};
+
+// console.log(user);
