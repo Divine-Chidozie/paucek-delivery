@@ -60,7 +60,10 @@ body {
   font-family: "poppins", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  /* color: #495057; */
+  background-color: white;
   color: #495057;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 html {
   font-size: 62.5%;
@@ -128,7 +131,15 @@ span {
 }
 
 /* ------------- COMPONENTS ------------- */
-.toggle-mode {
+
+body.dark-mode {
+  background-color: rgb(11, 11, 11);
+  color: white;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 .btn {
   font-size: 1.6rem;
@@ -136,7 +147,6 @@ span {
   padding: 1rem 3rem;
   border-radius: 8px;
 }
-
 .btn-primary:link,
 .btn-primary:visited {
   color: #ffffff;
@@ -355,4 +365,27 @@ span {
 }
 .heart-icon {
   color: #ff922b;
+}
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode .small-text,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+  color: white;
+}
+
+body.dark-mode a:link,
+body.dark-mode a:visited,
+body.dark-mode a:hover,
+body.dark-mode a:active {
+  color: white;
+}
+/* In dark mode, make the login button text black */
+body.dark-mode .login-btn {
+  color: black !important;
+  background-color: white;
+  border: 2px solid white;
 }
