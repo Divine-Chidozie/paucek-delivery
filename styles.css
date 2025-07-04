@@ -128,7 +128,8 @@ span {
 }
 
 /* ------------- COMPONENTS ------------- */
-
+.toggle-mode {
+}
 .btn {
   font-size: 1.6rem;
   text-decoration: none;
@@ -169,8 +170,8 @@ span {
 .btn-secondary:link,
 .btn-secondary:visited {
   color: #ffffff;
-  background-color: #9775fa;
-  border: 2px solid #9775fa;
+  background-color: #ff922b;
+  border: 2px solid #ff922b;
 }
 .btn-secondary:hover,
 .btn-secondary:active {
@@ -190,7 +191,8 @@ span {
   background-color: #339af0;
 }
 .highlight-secondary {
-  background-color: #9775fa;
+  /* background-color: #9775fa; */
+  background-color: #ff922b;
 }
 .highlight-tertiary {
   background-color: #ff922b;
@@ -352,5 +354,5 @@ span {
   width: 20px;
 }
 .heart-icon {
-  color: #9775fa;
+  color: #ff922b;
 }

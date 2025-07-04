@@ -57,6 +57,11 @@
   .hero-heading-break {
     display: none;
   }
+  /* added this new future now */
+  .btn {
+    color: red;
+    font-size: 1.8rem;
+  }
   .features-main-heading {
     margin-bottom: 10rem;
   }
