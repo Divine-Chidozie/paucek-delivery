@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/admin-dashboard.css" />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <nav id="headerNavSection">
+      <div class="headerNav">
+        <span class="adminHeading">
+          <img
+            class="dashboardLogo"
+            src="/images/Orange Modern Cargo Delivery Company Logo.png"
+            alt="Dashboard icon"
+          />
+        </span>
+        <form action="" method="post">
+          <button>Hide</button>
+          <input id="search" type="search" placeholder="Search here..." />
+          <input type="submit" value="Sign In" />
+        </form>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Sidebar nagivation -->
+      <aside>
+        <!-- ========================= -->
+        <!-- User Dashboard Section -->
+        <!-- ========================= -->
+        <div class="asideMenuNav" onclick="showSection('dashboardSection')">
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="20px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"
+              />
+            </svg>
+            Dashboard
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- User Section -->
+        <!-- ========================= -->
+        <div
+          class="asideMenuNav"
+          onclick="showSection('userManagementSection')"
+        >
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M680-280q25 0 42.5-17.5T740-340q0-25-17.5-42.5T680-400q-25 0-42.5 17.5T620-340q0 25 17.5 42.5T680-280Zm0 120q31 0 57-14.5t42-38.5q-22-13-47-20t-52-7q-27 0-52 7t-47 20q16 24 42 38.5t57 14.5ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v227q-19-8-39-14.5t-41-9.5v-147l-240-90-240 90v188q0 47 12.5 94t35 89.5Q310-290 342-254t71 60q11 32 29 61t41 52q-1 0-1.5.5t-1.5.5Zm200 0q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80ZM480-494Z"
+              />
+            </svg>
+            Users
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- Dispatch Center Section -->
+        <!-- ========================= -->
+        <div
+          class="asideMenuNav"
+          onclick="showSection('deliveryManagementSection')"
+        >
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M600-160q-134 0-227-93t-93-227q0-133 93-226.5T600-800q133 0 226.5 93.5T920-480q0 134-93.5 227T600-160Zm0-80q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70Zm91-91 57-57-108-108v-144h-80v177l131 132ZM80-600v-80h160v80H80ZM40-440v-80h200v80H40Zm40 160v-80h160v80H80Zm520-200Z"
+              />
+            </svg>
+            Dispatch Center
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- Rider Tracking Section -->
+        <!-- ========================= -->
+        <div
+          class="asideMenuNav"
+          onclick="showSection('RiderManagementSection')"
+        >
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M440-400h80v-120h120v-80H520v-120h-80v120H320v80h120v120Zm40 214q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"
+              />
+            </svg>
+            Rider Tracking
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- Alert Notification Section -->
+        <!-- ========================= -->
+        <div class="asideMenuNav">
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M480-500Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Zm240-360v-120H600v-80h120v-120h80v120h120v80H800v120h-80ZM160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q14 4 27.5 8.5T593-772q-15 14-27 30.5T545-706q-15-7-31.5-10.5T480-720q-66 0-113 47t-47 113v280h320v-112q18 11 38 18t42 11v83h80v80H160Z"
+              />
+            </svg>
+            Alert
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- Payment Section -->
+        <!-- ========================= -->
+        <div class="asideMenuNav">
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v240H160v240h400v80H160Zm0-480h640v-80H160v80ZM760-80v-120H640v-80h120v-120h80v120h120v80H840v120h-80ZM160-240v-480 480Z"
+              />
+            </svg>
+            Payment
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- Analytics Section -->
+        <!-- ========================= -->
+        <div class="asideMenuNav">
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M280-280h80v-200h-80v200Zm320 0h80v-400h-80v400Zm-160 0h80v-120h-80v120Zm0-200h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+              />
+            </svg>
+            Analytics
+          </h4>
+        </div>
+
+        <!-- ========================= -->
+        <!-- Setting Section -->
+        <!-- ========================= -->
+        <div class="asideMenuNav">
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="M400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm40-120q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-560q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Z"
+              />
+            </svg>
+            Settings
+          </h4>
+        </div>
+      </aside>
+
+      <!-- Dashboard Card -->
+
+      <!-- Dashboard Section -->
+      <div id="dashboardSection" class="section">
+        <!-- Total Users, Deliveries, etc. -->
+        <div class="card-container">
+          <div class="card">
+            <h3 class="total-users">Total Users</h3>
+            <p>203</p>
+          </div>
+
+          <div class="card">
+            <h3 class="total-deliveries">Total Deliveries</h3>
+            <p>487</p>
+          </div>
+
+          <div class="card">
+            <h3 class="ongoing-deliveriers">Ongoing Deliveries</h3>
+            <p>12</p>
+          </div>
+
+          <div class="card">
+            <h3 class="completed-deliveries">Completed Deliveries</h3>
+            <p>460</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================= -->
+      <!-- Users Section -->
+      <!-- ========================= -->
+      <div id="userManagementSection" class="section" style="display: none">
+        <h2 class="userManagementHeader">Users</h2>
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search users..."
+          onkeyup="searchUsers()"
+        />
+
+        <table
+          border="1"
+          width="100%"
+          cellspacing="0"
+          cellpadding="10"
+          id="userTable"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>john@email.com</td>
+              <td>Customer</td>
+              <td>Active</td>
+              <td>
+                <button onclick="deactivateUser(this)">Deactivate</button>
+                <button onclick="deleteUser(this)">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Jane Rider</td>
+              <td>jane@ride.com</td>
+              <td>Rider</td>
+              <td>Active</td>
+              <td>
+                <button onclick="deactivateUser(this)">Deactivate</button>
+                <button onclick="deleteUser(this)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ========================= -->
+      <!-- Dispatch Center Section -->
+      <!-- ========================= -->
+      <div id="deliveryManagementSection" class="section" style="display: none">
+        <h2>Dispatch Center Management</h2>
+
+        <input
+          type="text"
+          id="deliverySearchInput"
+          placeholder="Search by customer or status..."
+          onkeyup="searchDeliveries()"
+          style="margin-bottom: 10px; padding: 5px; width: 280px"
+        />
+
+        <table
+          border="1"
+          width="100%"
+          cellspacing="0"
+          cellpadding="10"
+          id="deliveryTable"
+        >
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Address</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1001</td>
+              <td>John Doe</td>
+              <td>Abuja - Garki</td>
+              <td>Pending</td>
+              <td>
+                <button onclick="markDelivered(this)">Mark as Delivered</button>
+                <button onclick="cancelOrder(this)">Cancel</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1002</td>
+              <td>Harley Kim</td>
+              <td>Lagos - Ikeja</td>
+              <td>In Progress</td>
+              <td>
+                <button onclick="markDelivered(this)">Mark as Delivered</button>
+                <button onclick="cancelOrder(this)">Cancel</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1003</td>
+              <td>Jane Smith</td>
+              <td>Lagos - Lekki</td>
+              <td>In Progress</td>
+              <td>
+                <button onclick="markDelivered(this)">Mark as Delivered</button>
+                <button onclick="cancelOrder(this)">Cancel</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ========================= -->
+      <!-- Rider Tracking Section -->
+      <!-- ========================= -->
+      <div id="RiderManagementSection"></div>
+    </main>
+
+    <script src="/scripts/admin-dashboard.js"></script>
+  </body>
+</html>

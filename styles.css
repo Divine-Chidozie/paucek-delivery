@@ -60,7 +60,6 @@ body {
   font-family: "poppins", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  /* color: #495057; */
   background-color: white;
   color: #495057;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -365,6 +364,9 @@ button {
 }
 .heart-icon {
   color: #ff922b;
+}
+.toggle-mode {
+  padding: 0 20px;
 }
 body.dark-mode p,
 body.dark-mode a,

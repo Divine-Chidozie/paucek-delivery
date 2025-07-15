@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+#headerNavSection {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.headerNav {
+  background-color: #339af0;
+  box-shadow: 0px 1px 5px #45505f;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.adminHeading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin-left: 2rem;
+}
+.dashboardLogo {
+  width: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+/*
+* form section
+ */
+form {
+  margin-right: 4rem;
+  padding: 0.8rem;
+  gap: 5px;
+  display: inline-flex;
+  align-items: center;
+}
+/* button {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+} */
+input[type="search"] {
+  font-size: 1rem;
+  padding: 9px 14px;
+  border: 1px solid #339af0;
+  outline: none;
+}
+input[type="submit"] {
+  padding: 9px;
+  width: 100%;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: white;
+  color: #339af0;
+  border: 2px solid #339af0;
+  cursor: pointer;
+}
+
+/* ----- MAIN SECTION ----- */
+/* ----- aside section ----- */
+
+main {
+  margin-left: 200px;
+  padding: 1rem;
+  margin-top: 60px;
+  /* box-shadow: 0px 1px 5px #212121; */
+}
+
+/* ========== Sidebar Styling ========== */
+aside {
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  box-shadow: 1px 0px 5px #212121;
+  padding: 1rem;
+  margin-top: 23px;
+  position: fixed;
+  top: 72px;
+  left: 0;
+}
+.asideMenuNav {
+  background-color: #e3f2fd;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 10px 0;
+}
+.dashboard {
+  color: rgb(51, 102, 255);
+}
+.asideMenuNav h4 {
+  font-size: 14px;
+}
+
+/* ========== Card Layout ========== */
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  margin-left: 80px;
+  margin-top: 60px;
+
+  /* background-color: red; */
+}
+.card {
+  height: 150px;
+  padding: 30px;
+  background-color: rgb(240, 242, 248);
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.total-users {
+  color: #f4a100;
+}
+.total-deliveries {
+  color: #ff413a;
+}
+.ongoing-deliveriers {
+  color: #00ac69;
+}
+.completed-deliveries {
+  color: #3366ff;
+}
+.card p {
+  color: #212121;
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+svg {
+  background-color: red;
+}
+/* ----- User Management ----- */
+#userManagementSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  margin-left: 80px;
+  margin-top: 60px;
+}
+.userManagementHeader {
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  font-size: 1.5rem;
+}
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 250px;
+  outline: none;
+  border: 1px solid #313131;
+}
+th {
+  text-align: left;
+}
+th,
+td {
+  padding: 10px;
+}
+
+/* ========== deliveryManagementSection ========== */
+#deliveryManagementSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  margin-left: 80px;
+  margin-top: 60px;
+}

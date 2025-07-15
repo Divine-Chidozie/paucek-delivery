@@ -12,6 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS Animation CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="queries/queries.css" />
     <title>Paucek</title>
@@ -29,7 +35,13 @@
           /></a>
 
           <ul class="nav-btn-container">
-            <button id="toggleBtn" class="toggle-mode">🌙</button>
+            <!-- <button id="toggleBtn" class="toggle-mode">🌙</button> -->
+            <input
+              id="toggleBtn"
+              class="toggle-mode"
+              type="button"
+              value="🌙"
+            />
             <li>
               <a
                 id="login"
@@ -67,16 +79,18 @@
                 >Request a Pickup</a
               >
             </li>
-            <!-- <li>
-              <a class="btn btn-primary-outline" href="#features">Learn more</a>
-            </li> -->
           </ul>
         </section>
       </header>
 
       <main>
         <!-- FEATURE SECTION -->
-        <section class="features-section">
+        <section
+          class="features-section"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1200"
+        >
           <h2 class="features-main-heading">
             How We Make Delivery Easy
             <!-- Finally, a
@@ -84,7 +98,7 @@
             use journel app -->
           </h2>
 
-          <div class="features-grid-container">
+          <div class="features-grid-container" data-aos="fade-up">
             <div>
               <h3 class="feature-headings">Ride With Us</h3>
               <p>
@@ -98,7 +112,7 @@
               alt="simple online journeling"
             />
 
-            <div>
+            <div data-aos="fade-up">
               <h3 class="feature-headings">Track Every Move</h3>
               <p>
                 Stay informed with real-time location tracking from pickup to
@@ -111,7 +125,7 @@
               src="images/delivery-2.png"
               alt="Track location in real time"
             />
-            <div>
+            <div data-aos="fade-left">
               <h3 class="feature-headings">Delivered with Care</h3>
               <p>
                 Your package has arrived at the destination. Reliable, timely,
@@ -127,7 +141,7 @@
         </section>
 
         <!-- CTA SECTION -->
-        <div class="cta-section">
+        <div class="cta-section" data-aos="fade-up">
           <div class="cta-card">
             <h2 class="cta-heading">Start Today</h2>
             <a
@@ -142,7 +156,7 @@
 
       <footer>
         <!-- FOOTER SECTION -->
-        <div class="footer-section">
+        <div class="footer-section" data-aos="fade-up">
           <a href="index.html">
             <img
               class="logo-sm"
@@ -217,6 +231,15 @@
         alt="chat icon"
       />
     </div>
+
+    <!-- AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
 
     <script src="script.js"></script>
   </body>
