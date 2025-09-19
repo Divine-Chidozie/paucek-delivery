@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles/request-delivery.css" />
+    <title>Request || Delivery</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- ==================== HEADER SECTION ==================== -->
+      <header>
+        <!-- 🌐 Navigation Bar -->
+        <nav class="navbar">
+          <a class="beta" href="/index.html">
+            <img
+              class="logo-md"
+              src="/images/Orange Modern Cargo Delivery Company Logo.png"
+              alt="Paucek logo"
+          /></a>
+
+          <ul class="nav-btn-container">
+            <input
+              id="toggleBtn"
+              class="toggle-mode"
+              type="button"
+              value="🌙"
+            />
+            <li>
+              <a
+                id="login"
+                class="btn btn-primary-outline login-btn"
+                href="/pages/login.html"
+                >Login</a
+              >
+            </li>
+            <li>
+              <a
+                id="register"
+                class="btn btn-primary"
+                href="/pages/register.html"
+                >Register</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- 📌 ==================== MAIN SECTION ==================== -->
+      <main>
+        <!-- ********** Page & Intro ********** -->
+        <section class="request-intro">
+          <h1>Request a Delivery</h1>
+          <p>
+            Fill out the form below with your pickup and drop-off details, and
+            we'll make sure your package gets delivered safely on time.
+          </p>
+        </section>
+
+        <!-- ********** Request Form ********** -->
+        <section class="request-form-section">
+          <form action="request-success.html" method="POST" id="form">
+            <div class="pickup-address form-group">
+              <label for="pickup-address">Pickup Address</label>
+              <input
+                id="pickup-address"
+                type="text"
+                placeholder="pickup address"
+              />
+            </div>
+            <div class="pick-up-address-error"></div>
+
+            <div class="dropoff-address form-group">
+              <label for="dropoff-address">Drop-off Address</label>
+              <input
+                id="dropoff-address"
+                type="text"
+                placeholder="drop-off address"
+              />
+            </div>
+            <div class="dropoff-address-error"></div>
+
+            <div class="delivery-date-time form-group">
+              <label for="data-time" class="date--time"
+                >Preferred Delivery Date/Time</label
+              >
+              <input id="date-time" type="datetime-local" />
+            </div>
+            <div class="date-time-error"></div>
+
+            <div class="package-details form-group">
+              <textarea
+                name="package-details"
+                id="package-details"
+                rows="3"
+                placeholder="Describe your package (size, weight, special instructions)..."
+              ></textarea>
+            </div>
+            <div class="package-details-error"></div>
+
+            <div class="submit-btn">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <!-- ==================== FOOTER SECTION ==================== -->
+      <footer>
+        <!-- FOOTER SECTION -->
+        <div class="footer-section">
+          <a href="/index.html">
+            <img
+              class="logo-sm"
+              src="/images/Orange Modern Cargo Delivery Company Logo.png"
+              alt="paucek logo"
+          /></a>
+          <!-- Add in social media icons later -->
+          <ul class="social-icons-container">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><img
+                  class="social-icons"
+                  src="/images/logo-instagram.svg"
+                  alt="instagram logo"
+              /></a>
+            </li>
+
+            <li>
+              <a href="https://facebook.com/" target="_blank"
+                ><img
+                  class="social-icons"
+                  src="/images/logo-facebook.svg"
+                  alt="facebook logo"
+              /></a>
+            </li>
+
+            <li>
+              <a href="https://tiktok.com/" target="_blank"
+                ><img
+                  class="social-icons"
+                  src="/images/logo-tiktok.svg"
+                  alt="tiktok logo"
+              /></a>
+            </li>
+
+            <li>
+              <a href="https://linkedin.com/" target="_blank"
+                ><img
+                  class="social-icons"
+                  src="/images/logo-linkedin.svg"
+                  alt="linkedin logo"
+              /></a>
+            </li>
+
+            <li>
+              <a href="https://youtube.com/" target="_blank"
+                ><img
+                  class="social-icons"
+                  src="/images/logo-youtube.svg"
+                  alt="youtube logo"
+              /></a>
+            </li>
+          </ul>
+
+          <ul class="footer-links-container">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/login.html">Login</a></li>
+            <li><a href="/pages/register.html">Register</a></li>
+          </ul>
+          <p class="small-text">
+            Made with <span class="heart-icon">♥</span> in Nigeria
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/scripts/request-delivery.js"></script>
+  </body>
+</html>

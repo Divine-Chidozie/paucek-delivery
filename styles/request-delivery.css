@@ -1,0 +1,68 @@
+.request-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+.request-intro h1 {
+  font-size: 5rem;
+}
+
+/* ********** Request Form Section ********** */
+.request-form-section {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 550px;
+}
+.form-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 1.5rem;
+  margin-left: -270px;
+}
+.date--time {
+  margin-left: -190px !important;
+}
+input,
+textarea {
+  padding: 8px 16px;
+  padding-left: 5px;
+  width: 70%;
+  font-size: 1.5rem;
+  outline: none;
+}
+.submit-btn {
+  margin-bottom: 4rem;
+}
+button {
+  color: #ffffff;
+  background-color: #339af0;
+  border: 2px solid #339af0;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+}
+.pick-up-address-error,
+.dropoff-address-error,
+.date-time-error,
+.package-details-error {
+  color: red;
+  font-size: 1.4rem;
+  margin-top: -15px;
+}

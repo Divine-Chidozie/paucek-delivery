@@ -1,0 +1,59 @@
+/* Dashboard Header */
+.rider-dashboard-hearder {
+  text-align: center;
+  margin: 2rem 0;
+}
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 4rem;
+  color: #222;
+}
+.dashboard-header p {
+  color: #555;
+}
+/* Delivery Table */
+.delivery-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+  font-size: 1.2rem;
+}
+.delivery-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.delivery-list th,
+.delivery-list td {
+  padding: 0.8rem;
+  text-align: left;
+  border-radius: 1px solid #ddd;
+}
+.delivery-list th {
+  background: #f4f4f4;
+}
+.pending {
+  background: #fff3cd;
+  color: #856404;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.accept {
+  background: #cce577;
+  color: #004085;
+  font-size: 1rem;
+}
+.delivery-state {
+  text-align: center;
+  margin: 2rem 0;
+}
+.delivery-state p {
+  font-size: 1.5rem;
+}
+.a-accept {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
