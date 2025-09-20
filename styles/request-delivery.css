@@ -66,3 +66,21 @@ button {
   font-size: 1.4rem;
   margin-top: -15px;
 }
+@media screen and (max-width: 600px) {
+  .request-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-group label {
+    text-align: left;
+    margin-left: -370px;
+  }
+  .date--time {
+    margin-left: -280px !important;
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+}
