@@ -23,7 +23,7 @@
 }
 .delivery-list table {
   width: 100%;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
 }
 .delivery-list th,
 .delivery-list td {
