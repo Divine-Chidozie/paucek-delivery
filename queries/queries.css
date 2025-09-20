@@ -70,13 +70,19 @@
   }
   .features-grid-container {
     grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
+  .feature-img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .feature-img-swap-order {
     grid-row: auto;
     grid-column: auto;
   }
   .cta-card {
-    padding: 8rem 16rem;
+    padding: 4rem 8rem;
     text-align: center;
   }
 }
