@@ -67,17 +67,16 @@ button {
   margin-top: -15px;
 }
 @media screen and (max-width: 600px) {
-  .request-intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  h1,
+  p {
+    text-align: center;
   }
   .form-group label {
     text-align: left;
-    margin-left: -370px;
+    margin-left: -40px;
   }
   .date--time {
-    margin-left: -280px !important;
+    margin-left: -40px !important;
   }
   input,
   textarea {
