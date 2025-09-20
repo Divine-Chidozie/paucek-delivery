@@ -119,4 +119,14 @@ registrationForm.addEventListener("submit", (e) => {
       body: JSON.stringify(formData),
     });
   }
+
+  // Redirect based on account type selected
+
+  if (accountType.value === "user") {
+    window.location.href = "/pages/user-dashboard.html";
+  } else if (accountType.value === "rider") {
+    window.location.href = "/pages/rider-dashboard.html";
+  } else if (accountType.value === "marchant") {
+    window.location.href = "/pages/marchant-dashboard.html";
+  }
 });
