@@ -23,16 +23,24 @@
 }
 .delivery-list table {
   width: 100%;
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 .delivery-list th,
 .delivery-list td {
   padding: 0.8rem;
   text-align: left;
   border-radius: 1px solid #ddd;
+  vertical-align: top;
+  word-break: break-word;
 }
 .delivery-list th {
   background: #f4f4f4;
+}
+.delivery-list td {
+  max-width: 200px; /* you can adjust this */
+  white-space: normal; /* allow wrapping */
 }
 .pending {
   background: #fff3cd;
