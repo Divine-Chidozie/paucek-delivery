@@ -73,10 +73,10 @@ button {
   }
   .form-group label {
     text-align: left;
-    margin-left: -40px;
+    margin-left: -90px;
   }
   .date--time {
-    margin-left: -40px !important;
+    margin-left: -70px !important;
   }
   input,
   textarea {
