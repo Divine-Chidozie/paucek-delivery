@@ -50,7 +50,7 @@
 
 /* XS - PHONE PORTRAINT: < 576px */
 
-@media (max-width: 34rem) {
+@media (max-width: 600px) {
   html {
     font-size: 37.5%;
   }
