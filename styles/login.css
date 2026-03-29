@@ -71,6 +71,15 @@ label {
   font-weight: 400;
 }
 
+#togglePassword {
+  font-size: 1.2rem;
+  padding: 3px 7px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+}
+
 /* ----- COMPONENT ----- */
 input {
   width: 100%;

@@ -1,76 +1,187 @@
+/* General */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+/* Settings Menu */
+.settings-menu {
+  position: relative;
+  margin-left: auto; /* push to the right */
+}
+
+#settings-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#settings-dropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  list-style: none;
+  padding: 0.5rem 0;
+  width: 180px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: none; /* hidden by default */
+  z-index: 100;
+}
+
+#settings-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+#settings-dropdown li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+#settings-dropdown li a:hover {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Show dropdown */
+#settings-dropdown.show {
+  display: block;
+}
+
 /* Dashboard Header */
 .dashboard-header {
   text-align: center;
   margin: 2rem 0;
 }
 .dashboard-header h1 {
-  margin: 0;
-  font-size: 4rem;
+  font-size: 3rem;
   color: #222;
 }
 .dashboard-header p {
   color: #555;
+  font-size: 1.3rem;
 }
-/* Delivery Table */
-.delivery-list {
-  max-width: 900px;
+
+/* Delivery Cards */
+.delivery-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.card {
   background: #fff;
-  border-radius: 6px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
-  font-size: 1.2rem;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
-.delivery-list table {
-  width: 100%;
-  border-collapse: collapse;
+.card:hover {
+  transform: translateY(-5px);
 }
-.delivery-list th,
-.delivery-list td {
-  padding: 0.8rem;
-  text-align: left;
-  border-radius: 1px solid #ddd;
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
 }
-.delivery-list th {
-  background: #f4f4f4;
-}
-.status {
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+
+.status-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: #fff;
 }
-.status.pending {
-  background: #fff3cd;
+
+.status-badge.pending {
+  background: #ffc107;
   color: #856404;
-  font-size: 1rem;
 }
-.status.delivered {
-  background: #d4edda;
-  color: #155724;
-  font-size: 1rem;
+.status-badge.delivered {
+  background: #28a745;
 }
-.status.progress {
-  background: #cce577;
-  color: #004085;
+.status-badge.in-progress {
+  background: #17a2b8;
+}
+.status-badge.cancelled {
+  background: #dc3545;
+}
+
+.card p {
+  margin: 0.4rem 0;
   font-size: 1rem;
 }
 
-/* New Request Button */
+.btn-track {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #ff9800;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn-track:hover {
+  background: #e68900;
+}
+.btn-track.disabled {
+  background: #ccc;
+  pointer-events: none;
+}
+
+/* New Delivery Button */
 .new-request {
   text-align: center;
   margin: 2rem 0;
 }
-.new-request .btn {
-  display: inline-block;
-  background: #ff9800;
-  color: #fff;
+.btn-new {
+  background: #339af0;
   padding: 0.8rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 5px;
+  color: #fff;
   text-decoration: none;
-  transition: 0.3s;
+  font-size: 1.2rem;
 }
-.new-request .btn:hover {
-  background: #e68900;
+.btn-new:hover {
+  background: #1d7dd9;
+}
+
+/* Filter Section */
+.filter-section {
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+#status-filter {
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  .dashboard-header p {
+    font-size: 1rem;
+  }
 }

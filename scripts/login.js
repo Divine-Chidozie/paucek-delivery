@@ -1,5 +1,6 @@
 const myForm = document.getElementById("my-form");
 const userName = document.getElementById("username");
+const togglePassword = document.getElementById("togglePassword");
 const passWord = document.getElementById("password");
 
 myForm.addEventListener("submit", (e) => {
@@ -47,5 +48,15 @@ myForm.addEventListener("submit", (e) => {
       },
       body: JSON.stringify(formData),
     });
+  }
+});
+
+togglePassword.addEventListener("click", function () {
+  if (passWord.type === "password") {
+    passWord.type = "text";
+    togglePassword.textContent = "hide password";
+  } else {
+    passWord.type = "password";
+    togglePassword.textContent = "show password";
   }
 });

@@ -1,5 +1,11 @@
 /* LG - SMALL LAPTOPS: 1024px - 1280px */
 
+@media (min-width: 1024px) {
+  .cta-card {
+    padding: 7rem 20rem; /* desktop */
+  }
+}
+
 @media (max-width: 72rem) {
   /* 1150px / 16px = 72rem */
   /* 72rem x 16px = 1152px */
@@ -76,7 +82,7 @@
   }
   .features-grid-container {
     grid-template-columns: 1fr;
-    row-gap: 3rem;
+    row-gap: 6rem;
   }
   .feature-img {
     max-width: 100%;

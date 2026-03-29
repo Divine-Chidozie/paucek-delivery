@@ -23,18 +23,38 @@
     <div class="container">
       <div class="form-container">
         <h1>
-          <a class="home-link-back-nav" href="/index.html">Welcome Back 🖐</a>
+          <a
+            class="home-link-back-nav"
+            href="/index.html"
+            aria-label="Go back to homepage"
+            >Welcome Back 🖐</a
+          >
         </h1>
         <form id="my-form">
           <label for="username">
             Username
-            <input id="username" type="text" name="username" />
+            <input
+              id="username"
+              type="text"
+              name="username"
+              required
+              autocomplete="username"
+              autofocus
+            />
             <span id="username-error"></span>
           </label>
 
           <label for="password">
             Password
-            <input id="password" type="password" name="password" />
+            <input
+              id="password"
+              type="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+            <button type="button" id="togglePassword">Show Password</button>
+
             <span id="password-error"></span>
           </label>
 

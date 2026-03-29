@@ -1,151 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/styles/user-dashboard.css" />
-    <title>User || Dashboard</title>
+    <title>User Dashboard</title>
   </head>
   <body>
     <div class="container">
-      <!-- ==================== HEADER SECTION ==================== -->
+      <!-- HEADER -->
       <header>
-        <!-- 🌐 Navigation Bar -->
         <nav class="navbar">
-          <a class="beta" href="/index.html">
+          <a href="/index.html" class="logo-link">
             <img
-              class="logo-md"
               src="/images/Orange Modern Cargo Delivery Company Logo.png"
               alt="Paucek logo"
-          /></a>
+              class="logo-md"
+            />
+          </a>
+
+          <!-- Add this inside <nav class="navbar"> -->
+          <div class="settings-menu">
+            <button id="settings-btn">⚙️</button>
+            <ul id="settings-dropdown" class="hidden">
+              <li><a href="/pages/profile.html">Profile</a></li>
+              <li><a href="/pages/notifications.html">Notifications</a></li>
+              <li><a href="/pages/support.html">Support</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 
-      <!-- 📌 ==================== MAIN SECTION ==================== -->
+      <!-- MAIN -->
       <main>
-        <!-- Dashboard Header -->
         <section class="dashboard-header">
           <h1>My Deliveries</h1>
-          <p>Track and manage your delivery requests..</p>
+          <p>Track and manage your delivery requests</p>
         </section>
 
-        <!-- Delivery List Section -->
-        <section class="delivery-list">
-          <table>
-            <thead>
-              <tr>
-                <th>Pickup</th>
-                <th>Drop-off</th>
-                <th>Package</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Statc Example Data -->
-              <tr>
-                <td>12 Admiralty Way, Lekki Phase 1</td>
-                <td>45 Awolowo Road, Ikoyi</td>
-                <td>Small Box</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>25 Allen Avenue, Ikeja</td>
-                <td>8 Adeniran Ogunsanya Street, Surulere</td>
-                <td>Envelope</td>
-                <td><span class="status delivered">Delivered</span></td>
-              </tr>
-              <tr>
-                <td>1 Marina Road, Lagos Island</td>
-                <td>15 Herbert Macaulay Way, Yaba</td>
-                <td>Meduim Bag</td>
-                <td><span class="status in-progress">In Progress</span></td>
-              </tr>
-
-              <tr>
-                <td>33 Bode Thomas Street, Surulere</td>
-                <td>18 Mobolaji Bank Anthony Way, Ikeja</td>
-                <td>Large Parcel</td>
-                <td><span class="status cancelled">Cancelled</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Filter Deliveries -->
+        <section class="filter-section">
+          <label for="status-filter">Filter by Status:</label>
+          <select id="status-filter">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="delivered">Delivered</option>
+            <option value="in-progress">In Progress</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
         </section>
 
-        <!-- Call to Action -->
+        <!-- Delivery Cards -->
+        <section class="delivery-cards">
+          <div class="card pending">
+            <div class="card-header">
+              <h3>Pickup: 12 Admiralty Way, Lekki Phase 1</h3>
+              <span class="status-badge pending">Pending</span>
+            </div>
+            <p><strong>Drop-off:</strong> 45 Awolowo Road, Ikoyi</p>
+            <p><strong>Package:</strong> Small Box</p>
+            <a href="#" class="btn btn-track">Track Delivery</a>
+          </div>
+
+          <div class="card delivered">
+            <div class="card-header">
+              <h3>Pickup: 25 Allen Avenue, Ikeja</h3>
+              <span class="status-badge delivered">Delivered</span>
+            </div>
+            <p>
+              <strong>Drop-off:</strong> 8 Adeniran Ogunsanya Street, Surulere
+            </p>
+            <p><strong>Package:</strong> Envelope</p>
+            <a href="#" class="btn btn-track">View Receipt</a>
+          </div>
+
+          <div class="card in-progress">
+            <div class="card-header">
+              <h3>Pickup: 1 Marina Road, Lagos Island</h3>
+              <span class="status-badge in-progress">In Progress</span>
+            </div>
+            <p><strong>Drop-off:</strong> 15 Herbert Macaulay Way, Yaba</p>
+            <p><strong>Package:</strong> Medium Bag</p>
+            <a href="#" class="btn btn-track">Track Delivery</a>
+          </div>
+
+          <div class="card cancelled">
+            <div class="card-header">
+              <h3>Pickup: 33 Bode Thomas Street, Surulere</h3>
+              <span class="status-badge cancelled">Cancelled</span>
+            </div>
+            <p>
+              <strong>Drop-off:</strong> 18 Mobolaji Bank Anthony Way, Ikeja
+            </p>
+            <p><strong>Package:</strong> Large Parcel</p>
+            <a href="#" class="btn btn-track disabled">Cancelled</a>
+          </div>
+        </section>
+
+        <!-- New Request -->
         <section class="new-request">
-          <a href="request-delivery.html" class="btn">Request New Delivery</a>
+          <a href="request-delivery.html" class="btn btn-new"
+            >Request New Delivery</a
+          >
         </section>
       </main>
-
-      <!-- ==================== FOOTER SECTION ==================== -->
-      <footer>
-        <!-- FOOTER SECTION -->
-        <div class="footer-section">
-          <a href="/index.html">
-            <img
-              class="logo-sm"
-              src="/images/Orange Modern Cargo Delivery Company Logo.png"
-              alt="paucek logo"
-          /></a>
-          <!-- Add in social media icons later -->
-          <ul class="social-icons-container">
-            <li>
-              <a href="https://www.instagram.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="/images/logo-instagram.svg"
-                  alt="instagram logo"
-              /></a>
-            </li>
-
-            <li>
-              <a href="https://facebook.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="/images/logo-facebook.svg"
-                  alt="facebook logo"
-              /></a>
-            </li>
-
-            <li>
-              <a href="https://tiktok.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="/images/logo-tiktok.svg"
-                  alt="tiktok logo"
-              /></a>
-            </li>
-
-            <li>
-              <a href="https://linkedin.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="/images/logo-linkedin.svg"
-                  alt="linkedin logo"
-              /></a>
-            </li>
-
-            <li>
-              <a href="https://youtube.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="/images/logo-youtube.svg"
-                  alt="youtube logo"
-              /></a>
-            </li>
-          </ul>
-
-          <ul class="footer-links-container">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/pages/login.html">Login</a></li>
-            <li><a href="/pages/register.html">Register</a></li>
-          </ul>
-          <p class="small-text">
-            Made with <span class="heart-icon">♥</span> in Nigeria
-          </p>
-        </div>
-      </footer>
     </div>
+
+    <script src="/scripts/user-dashboard.js"></script>
   </body>
 </html>

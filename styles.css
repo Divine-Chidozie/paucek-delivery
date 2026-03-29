@@ -146,7 +146,7 @@ button {
   font-size: 1.6rem;
   text-decoration: none;
   padding: 1rem 3rem;
-  border-radius: 8px;
+  border-radius: 3px;
 }
 .btn-primary:link,
 .btn-primary:visited {
@@ -180,17 +180,14 @@ button {
 }
 .btn-secondary:link,
 .btn-secondary:visited {
-  color: #ffffff;
-  background-color: #ff922b;
-  border: 2px solid #ff922b;
+  color: black !important;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
 }
 .btn-secondary:hover,
 .btn-secondary:active {
   color: #ffffff;
-  background-color: #7048e8;
-  border: 2px solid #7048e8;
-  transform: scale(1.05, 1.05);
-  box-shadow: 0px 3px 6px #495057;
+  background-color: whitesmoke;
   transition: 0.5s;
 }
 .highlight {
@@ -308,7 +305,7 @@ button {
 .features-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 15rem;
+  row-gap: 10rem;
   column-gap: 5rem;
   justify-items: center;
   align-items: center;
@@ -336,8 +333,10 @@ button {
   text-align: center;
   background-color: #339af0;
   max-width: 1000px;
-  padding: 7rem 20rem;
-  border-radius: 20px;
+  /* padding: 7rem 20rem; */
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  width: 100%;
 }
 .cta-heading {
   margin-bottom: 3rem;
@@ -360,6 +359,10 @@ button {
 .footer-links-container {
   display: flex;
   gap: 1rem;
+}
+.footer-links-container a:hover {
+  color: #339af0 !important;
+  transition: all 0.3s ease-in;
 }
 .social-icons {
   width: 20px;
