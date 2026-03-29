@@ -1,0 +1,39 @@
+.choice-button-container {
+  display: flex;
+  gap: 5px;
+}
+
+#choice-login-button {
+  background-color: #ffffff;
+  border: 2px solid #339af0;
+  color: #339af0;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 15px;
+}
+
+#choice-login-button:hover,
+#choice-register-button {
+  background-color: #339bf0e1;
+  border: 2px solid #339af0;
+  color: #ffffff;
+  transition: 0.2s ease-in;
+}
+
+#choice-register-button {
+  background-color: #339af0;
+  border: 2px solid #339af0;
+  color: white;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 15px;
+}
+
+#choice-register-button:hover {
+  background-color: #ffffff;
+  border: 2px solid #339af0;
+  color: #339bf0e1;
+  transition: 0.2s ease-in;
+}

@@ -5,81 +5,121 @@
   margin-top: 4rem;
 }
 .request-intro h1 {
-  font-size: 5rem;
+  font-size: 2.2rem;
 }
 
-/* ********** Request Form Section ********** */
+.request-intro p {
+  font-size: 1.5rem;
+}
+
+/* Request Form Section */
 .request-form-section {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 20px;
   width: 90%;
   max-width: 550px;
 }
+
 .form-group {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: flex-start;
 }
+
 .form-group label {
-  font-size: 1.5rem;
-  margin-left: -270px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
-.date--time {
-  margin-left: -190px !important;
-}
+
 input,
 textarea {
-  padding: 8px 16px;
-  padding-left: 5px;
-  width: 70%;
-  font-size: 1.5rem;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 1rem;
   outline: none;
 }
+
 .submit-btn {
   margin-bottom: 4rem;
 }
+
 button {
-  color: #ffffff;
+  color: #fff;
   background-color: #339af0;
   border: 2px solid #339af0;
-  font-size: 1.6rem;
-  text-decoration: none;
-  padding: 1rem 3rem;
-  border-radius: 8px;
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
 }
-.pick-up-address-error,
-.dropoff-address-error,
-.date-time-error,
-.package-details-error {
+
+button:active {
+  background-color: #339af0;
+}
+
+button:hover {
+  background-color: hsla(207, 67%, 51%, 0.888);
+  transition: 0.3s ease-in;
+
+  border: 2px solid hsla(207, 67%, 51%, 0.888);
+}
+
+.error {
   color: red;
-  font-size: 1.4rem;
-  margin-top: -15px;
+  font-size: 0.9rem;
+  margin-top: 3px;
 }
+
+.success-card {
+  background-color: #f0f8ff;
+  border: 2px solid #339af0;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.success-card h2 {
+  color: green;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+.success-card p {
+  margin: 5px 0;
+  font-size: 1.5rem;
+}
+
+.success-card.hidden {
+  display: none;
+}
+
+#close-card {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Responsive */
 @media screen and (max-width: 600px) {
-  h1,
-  p {
+  .request-intro h1 {
+    font-size: 2rem;
     text-align: center;
   }
   .form-group label {
-    text-align: left;
-    margin-left: -200px;
-  }
-  .date--time {
-    margin-left: -110px !important;
-  }
-  input,
-  textarea {
-    width: 100%;
+    font-size: 1rem;
   }
 }

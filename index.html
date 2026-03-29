@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,8 +20,9 @@
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="queries/queries.css" />
-    <title>Paucek</title>
+    <title>Paucek Deliveries</title>
   </head>
+
   <body>
     <div class="container">
       <header class="header">
@@ -227,12 +228,33 @@
     </div>
 
     <div class="chat-container">
-      <img
-        id="chat-icon-logo"
-        class="chat-icon"
-        src="images/chat.svg"
-        alt="chat icon"
-      />
+      <a id="support-assitance-link" href="#">
+        <img
+          id="chat-icon-logo"
+          class="chat-icon"
+          src="images/chat.svg"
+          alt="chat icon"
+        />
+      </a>
+    </div>
+
+    <div id="chatbox" class="chatbox hidden">
+      <!-- Chat Support -->
+      <div class="chat-header">
+        <span>Support</span>
+        <button id="closeChat">✖</button>
+      </div>
+
+      <!-- Chat Message -->
+      <div id="chatMessages" class="chat-messages">
+        <div class="message bot">Hi 👋 How can we help you?</div>
+      </div>
+
+      <!-- Chat Send -->
+      <div class="chat-input">
+        <input id="chatInput" type="text" placeholder="Type a message...." />
+        <button id="sendMessage">Send</button>
+      </div>
     </div>
 
     <!-- AOS JavaScript -->
