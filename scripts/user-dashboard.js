@@ -28,3 +28,8 @@ filterSelect.addEventListener("change", () => {
     }
   });
 });
+
+document.getElementById("track-delivery-link").onclick = function (e) {
+  e.preventDefault();
+  alert("We are working on this feature");
+};

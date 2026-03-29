@@ -58,6 +58,20 @@
             <span id="password-error"></span>
           </label>
 
+          <div class="account-type-container">
+            <p>Select Account Type</p>
+
+            <div class="account-options">
+              <div class="account-card" data-value="user">User</div>
+              <div class="account-card" data-value="rider">Rider</div>
+              <div class="account-card" data-value="marchant">Marchant</div>
+            </div>
+
+            <!-- Hidden input (this is what JS will use) -->
+            <input type="hidden" id="account-type" />
+            <span id="account-type-error"></span>
+          </div>
+
           <input class="btn btn-primary" type="submit" value="Login" />
         </form>
         <span class="register"

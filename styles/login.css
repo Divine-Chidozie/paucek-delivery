@@ -65,7 +65,7 @@ label {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: self-start;
+  align-items: flex-start;
   flex-direction: column;
   color: #495057;
   font-weight: 400;
@@ -112,14 +112,14 @@ input[type="password"] {
 }
 #username-error {
   color: #e10202;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: -8px;
   margin-left: 2px;
   font-weight: 600;
 }
 #password-error {
   color: #e10202;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: -8px;
   margin-left: 2px;
   font-weight: 600;
@@ -135,4 +135,45 @@ input[type="password"] {
   margin: 0 5px;
   text-decoration: none;
   font-size: 13px;
+}
+/* Account Type Cards */
+.account-type-container {
+  width: 100%;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.account-type-container p {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.account-options {
+  display: flex;
+  gap: 10px;
+}
+
+.account-card {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.3rem;
+  background: #fff;
+}
+
+/* Hover */
+.account-card:hover {
+  border-color: #339af0;
+}
+
+/* Active (selected) */
+.account-card.active {
+  background: #339af0;
+  color: #fff;
+  border-color: #339af0;
 }

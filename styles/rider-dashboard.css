@@ -1,67 +1,62 @@
-/* Dashboard Header */
-.rider-dashboard-hearder {
-  text-align: center;
-  margin: 2rem 0;
-}
-.dashboard-header h1 {
-  margin: 0;
-  font-size: 4rem;
-  color: #222;
-}
-.dashboard-header p {
-  color: #555;
-}
-/* Delivery Table */
-.delivery-list {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
-  font-size: 1.2rem;
-}
+/* ===== Rider Dashboard ===== */
+
 .delivery-list table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
-  word-wrap: break-word;
+  margin-top: 20px;
 }
+
 .delivery-list th,
 .delivery-list td {
-  padding: 0.8rem;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
   text-align: left;
-  border-radius: 1px solid #ddd;
-  vertical-align: top;
-  word-break: break-word;
 }
+
 .delivery-list th {
-  background: #f4f4f4;
+  background-color: #f8f8f8;
 }
-.delivery-list td {
-  max-width: 200px; /* you can adjust this */
-  white-space: normal; /* allow wrapping */
+
+.accept-btn,
+.decline-btn,
+.deliver-btn {
+  padding: 6px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
 }
+
+.accept-btn {
+  background-color: #28a745;
+}
+
+.decline-btn {
+  background-color: #dc3545;
+}
+
+.deliver-btn {
+  background-color: #007bff;
+}
+
 .pending {
-  background: #fff3cd;
-  color: #856404;
-  font-size: 1rem;
+  color: #ffc107;
   font-weight: bold;
 }
-.accept {
-  background: #cce577;
-  color: #004085;
-  font-size: 1rem;
-}
-.delivery-state {
-  text-align: center;
-  margin: 2rem 0;
-}
-.delivery-state p {
-  font-size: 1.5rem;
-}
-.a-accept {
-  padding: 0.5rem 1rem;
+
+.in-progress {
+  color: #17a2b8;
   font-weight: bold;
-  border-radius: 4px;
+}
+
+.delivered {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.wallet-display {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
 }

@@ -1,132 +1,98 @@
-const registrationForm = document.getElementById("registration-form");
+// ================== REGISTER JS ==================
+const registerForm = document.getElementById("registration-form");
 
-const firstname = document.getElementById("firstname");
-const firstnameError = document.getElementById("firstname-error");
-
-const lastname = document.getElementById("lastname");
-const lastnameError = document.getElementById("lastname-error");
-
-const passwordInput = document.getElementById("password");
-const passwordError = document.getElementById("error-password");
-
-const email = document.getElementById("email");
-const emailError = document.getElementById("email-error");
-
-const accountType = document.getElementById("account-type");
-const accountTypeError = document.getElementById("account-type-error");
-
-const checkbox = document.getElementById("checkbox");
-const checkboxError = document.getElementById("checkbox-error");
-
-firstname.addEventListener("input", () => {
-  firstnameError.textContent = "";
-});
-
-lastname.addEventListener("input", () => {
-  lastnameError.textContent = "";
-});
-
-password.addEventListener("input", () => {
-  passwordError.textContent = "";
-});
-lastname.addEventListener("input", () => {
-  lastnameError.textContent = "";
-});
-
-email.addEventListener("input", function () {
-  emailError.innerText = "";
-});
-
-accountType.addEventListener("input", function () {
-  accountTypeError.innerText = "";
-});
-checkbox.addEventListener("change", function () {
-  checkboxError.innerText = "";
-});
-
-registrationForm.addEventListener("submit", (e) => {
+registerForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  firstnameError.textContent = "";
-  lastnameError.textContent = "";
-  passwordError.textContent = "";
-  emailError.textContent = "";
-  accountTypeError.textContent = "";
-  checkboxError.textContent = "";
+  const firstname = document.getElementById("firstname").value.trim();
+  const lastname = document.getElementById("lastname").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const accountType = document.getElementById("account-type").value;
+  const checkbox = document.getElementById("checkbox").checked;
+
+  const firstnameError = document.getElementById("firstname-error");
+  const lastnameError = document.getElementById("lastname-error");
+  const passwordError = document.getElementById("error-password");
+  const emailError = document.getElementById("email-error");
+  const accountTypeError = document.getElementById("account-type-error");
+  const checkboxError = document.getElementById("checkbox-error");
+
+  // Clear errors
+  [
+    firstnameError,
+    lastnameError,
+    passwordError,
+    emailError,
+    accountTypeError,
+    checkboxError,
+  ].forEach((el) => (el.textContent = ""));
 
   let isValid = true;
 
-  const password = passwordInput.value.trim();
-
-  if (!firstname.value.trim()) {
-    firstnameError.innerText = "First name is required *";
+  if (!firstname) {
+    firstnameError.textContent = "First name is required";
     isValid = false;
   }
 
-  if (lastname.value.trim() === "") {
-    lastnameError.innerText = "Last name is required*";
-    isValid = false;
-  } else if (lastname.value.trim() === firstname.value.trim()) {
-    lastnameError.innerText = "Last name can not be the same *";
+  if (!lastname) {
+    lastnameError.textContent = "Last name is required";
     isValid = false;
   }
 
-  const passwordErrorMessage = "Password is required *";
-  const pattern =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   if (!password) {
-    passwordError.innerText = passwordErrorMessage;
-    isValid = false;
-  } else if (password.length < 8) {
-    passwordError.textContent = "password must be least 8 characters long *";
-    isValid = false;
-  } else if (password.length > 20) {
-    passwordError.innerText = "password must not exceed 20 characters *";
-  } else if (!pattern.test(password)) {
-    passwordError.innerText =
-      "Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, one number, and one special character *";
-    isValid = false;
-  }
-  if (!email.value.trim()) {
-    emailError.textContent = "Email is required *";
+    passwordError.textContent = "Password is required";
     isValid = false;
   }
 
-  if (!accountType.value.trim()) {
-    accountTypeError.textContent = "Please select an account type *";
-    isValid = false;
-  }
-  if (!checkbox.checked) {
-    checkboxError.textContent = "You must accept the terms & conditions *";
+  if (!email) {
+    emailError.textContent = "Email is required";
     isValid = false;
   }
 
-  if (isValid) {
-    const formData = {
-      firstname: firstname,
-      lastname: lastname,
-      password: password,
-      email: email,
-      accountType: accountType,
-      checkbox: checkbox,
-    };
-
-    fetch("/api/form/register", {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+  if (!accountType) {
+    accountTypeError.textContent = "Select account type";
+    isValid = false;
   }
 
-  // Redirect based on account type selected
+  if (!checkbox) {
+    checkboxError.textContent = "Accept terms first";
+    isValid = false;
+  }
 
-  if (accountType.value === "user") {
+  if (!isValid) return;
+
+  // 🔥 SAVE USER TO LOCALSTORAGE
+  const newUser = {
+    firstname,
+    lastname,
+    email,
+    password,
+    accountType,
+  };
+
+  // Get existing users
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // Check if user already exists
+  const existingUser = users.find((user) => user.email === email);
+
+  if (existingUser) {
+    alert("User already exists. Please login.");
+    return;
+  }
+
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Registration successful!");
+
+  // Redirect based on account type
+  if (accountType === "user") {
     window.location.href = "/pages/user-dashboard.html";
-  } else if (accountType.value === "rider") {
-    window.location.href = "/pages/rider-dashboard.html";
-  } else if (accountType.value === "marchant") {
-    window.location.href = "/pages/marchant-dashboard.html";
+  } else if (accountType === "rider") {
+    window.location.href = "/pages/rider.html";
+  } else if (accountType === "marchant") {
+    window.location.href = "/pages/marchent.html";
   }
 });
