@@ -66,9 +66,11 @@ function sendMessage() {
 
   // Fake reply
   const reply = setTimeout(() => {
+    const fakeMessage = `Thanks! We'll get back to you shortly.`;
+
     const typingMsg = addMessage("Typing...", "bot");
     setTimeout(() => {
-      typingMsg.textContent = "Thanks! We'll get back to you shortly.";
+      typingMsg.textContent = `${fakeMessage}`;
     }, 1000);
   }, 500);
 }

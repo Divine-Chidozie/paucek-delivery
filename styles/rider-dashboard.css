@@ -1,9 +1,133 @@
-/* ===== Rider Dashboard ===== */
+/* ===== GENERAL ===== */
+.rider-dashboard-header {
+  margin-bottom: 20px;
+}
 
+.rider-dashboard-header h1 {
+  font-size: 28px;
+}
+
+.rider-dashboard-header p {
+  color: #666;
+}
+
+/* ===== TOP SECTION (STATUS + WALLET) ===== */
+.rider-top {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.status-box,
+.wallet-box {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.status-box h3,
+.wallet-box h3 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+/* Status Button */
+#toggleStatus {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#toggleStatus.online {
+  background-color: #28a745;
+  color: #fff;
+}
+
+#toggleStatus:not(.online) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Wallet */
+.wallet-box p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===== WITHDRAW SECTION ===== */
+.withdraw-section {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.withdraw-section input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#withdrawBtn {
+  padding: 6px 12px;
+  border: none;
+  /* background-color: #ff9800; */
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#withdrawBtn:hover {
+  opacity: 0.9;
+}
+
+/* ===== ACTIVE DELIVERY ===== */
+.active-delivery {
+  background: #fff3cd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border: 1px solid #ffeeba;
+}
+
+.active-delivery h2 {
+  margin-bottom: 10px;
+}
+
+.btn-start,
+.btn-complete {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-start {
+  background-color: #007bff;
+  font-size: 1.5rem;
+}
+
+.btn-complete {
+  background-color: #28a745;
+}
+
+/* ===== TABLE ===== */
+
+.delivery-list h2 {
+  font-size: 35px;
+}
 .delivery-list table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .delivery-list th,
@@ -17,29 +141,21 @@
   background-color: #f8f8f8;
 }
 
-.accept-btn,
-.decline-btn,
-.deliver-btn {
+/* Buttons */
+.delivery-list button {
   padding: 6px 12px;
-  margin-right: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  color: #fff;
+  color: #333;
+  font-size: 1.3rem;
 }
 
-.accept-btn {
-  background-color: #28a745;
+.delivery-list button:hover {
+  opacity: 0.9;
 }
 
-.decline-btn {
-  background-color: #dc3545;
-}
-
-.deliver-btn {
-  background-color: #007bff;
-}
-
+/* ===== STATUS COLORS ===== */
 .pending {
   color: #ffc107;
   font-weight: bold;
@@ -55,8 +171,33 @@
   font-weight: bold;
 }
 
-.wallet-display {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 15px;
+/* ===== EMPTY STATE ===== */
+.delivery-state {
+  margin-top: 20px;
+  color: #888;
+}
+
+/* ===== LOGOUT ===== */
+.logout-section {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+#logoutBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #313131;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+#logoutBtn:hover {
+  background-color: #333;
+}
+
+/* ===== UTIL ===== */
+.hidden {
+  display: none;
 }

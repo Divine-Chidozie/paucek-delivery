@@ -1,10 +1,7 @@
-// ================== LOGIN JS ==================
 const loginForm = document.getElementById("my-form");
 const togglePassword = document.getElementById("togglePassword");
-
 const passwordInput = document.getElementById("password");
 
-// ================== LOGIN ==================
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -12,18 +9,6 @@ loginForm.addEventListener("submit", (e) => {
   const password = passwordInput.value.trim();
   const accountType = document.getElementById("account-type").value;
 
-  const usernameError = document.getElementById("username-error");
-  const passwordError = document.getElementById("password-error");
-
-  usernameError.textContent = "";
-  passwordError.textContent = "";
-
-  if (!username || !password || !accountType) {
-    passwordError.textContent = "All fields are required";
-    return;
-  }
-
-  // 🔥 GET USERS
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
   const foundUser = users.find(
@@ -34,40 +19,29 @@ loginForm.addEventListener("submit", (e) => {
   );
 
   if (!foundUser) {
-    passwordError.textContent = "Invalid credentials or wrong account type";
+    alert("Invalid login details or wrong account type");
     return;
   }
+
+  // ✅ SAVE CURRENT USER
+  localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
   // ✅ REDIRECT
   if (accountType === "user") {
     window.location.href = "/pages/user-dashboard.html";
-    // window.location.href = "/pages/pickup.html";
   } else if (accountType === "rider") {
-    window.location.href = "/pages/rider.html";
-  } else if (accountType === "marchant") {
-    window.location.href = "/pages/marchent.html";
+    window.location.href = "/pages/rider-dashboard.html";
+  } else if (accountType === "merchant") {
+    window.location.href = "/pages/marchent-dashboard.html";
   }
 });
 
-// const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-// if (!currentUser || currentUser.accountType !== "user") {
-//   alert("Access denied. Only users can request delivery.");
-//   window.location.href = "/pages/login.html";
-//   localStorage.setItem("currentUser", JSON.stringify(foundUser));
-// }
-
-// ================== TOGGLE PASSWORD ==================
+// Toggle password
 togglePassword.addEventListener("click", () => {
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    togglePassword.textContent = "Hide Password";
-  } else {
-    passwordInput.type = "password";
-    togglePassword.textContent = "Show Password";
-  }
+  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
 });
 
-// ================== ACCOUNT CARD SELECT ==================
+// Account card selection
 const cards = document.querySelectorAll(".account-card");
 const hiddenInput = document.getElementById("account-type");
 

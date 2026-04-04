@@ -159,8 +159,8 @@ button {
   color: #ffffff;
   background: #1c7ed6;
   border: 2px solid #1c7ed6;
-  transform: scale(1.05, 1.05);
-  box-shadow: 0px 3px 6px #495057;
+  /* transform: scale(1.05, 1.05); */
+  /* box-shadow: 0px 3px 6px #495057; */
   transition: 0.5s;
 }
 .btn-primary-outline:link,
@@ -199,7 +199,6 @@ button {
   background-color: #339af0;
 }
 .highlight-secondary {
-  /* background-color: #9775fa; */
   background-color: #ff922b;
 }
 .highlight-tertiary {
@@ -329,6 +328,7 @@ button {
   display: flex;
   justify-content: center;
 }
+
 .cta-card {
   text-align: center;
   background-color: #339af0;
@@ -338,10 +338,12 @@ button {
   border-radius: 10px;
   width: 100%;
 }
+
 .cta-heading {
   margin-bottom: 3rem;
   color: #ffffff;
   font-size: 3rem;
+  letter-spacing: 1px;
 }
 /* ----- FOOTER SECTION ----- */
 
@@ -352,6 +354,7 @@ button {
   gap: 1rem;
   margin-bottom: 5rem;
 }
+
 .social-icons-container {
   display: flex;
   gap: 1.5rem;
@@ -364,9 +367,18 @@ button {
   color: #339af0 !important;
   transition: all 0.3s ease-in;
 }
+
 .social-icons {
   width: 20px;
 }
+
+.social-icons:hover {
+  background-color: red;
+  transition: 0.3s ease-in;
+  background-color: #339af0;
+  padding: 2px;
+}
+
 .heart-icon {
   color: #ff922b;
 }

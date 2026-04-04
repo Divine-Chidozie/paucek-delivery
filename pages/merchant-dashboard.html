@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles/merchant-dashboard.css" />
+    <title>Marchent Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar">
+          <a href="/index.html">
+            <img
+              class="logo-md"
+              src="/images/Orange Modern Cargo Delivery Company Logo.png"
+              alt="Paucek logo"
+              width="25px"
+            />
+          </a>
+        </nav>
+
+        <div class="merchant-dashboard-header">
+          <h1>Merchant Dashboard</h1>
+          <p>Manage your products and incoming orders</p>
+        </div>
+      </header>
+
+      <main class="main-section">
+        <!-- ===== Section 1: Products ===== -->
+        <section class="product-section">
+          <h2>My Products</h2>
+
+          <button>Add New Product</button>
+
+          <div class="product-card">
+            <p>Product: Fried Rice</p>
+            <p>Price: ₦2500</p>
+            <p>Status: Available</p>
+
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </section>
+
+        <!-- ===== Section 2: Incoming Orders ===== -->
+        <section>
+          <h2>Incoming Orders</h2>
+
+          <div class="order-card">
+            <p>Order ID: #001</p>
+            <p>Customer: Divine</p>
+            <p>Item: Fried Rice</p>
+            <p>Delivery Address: Lekki</p>
+            <p>Status: Pending</p>
+
+            <button>AAccept Order</button>
+            <button>Reject</button>
+          </div>
+        </section>
+
+        <!-- ===== Section 3: PreparingReady State ===== -->
+        <section>
+          <h2>Preparing Orders</h2>
+
+          <div>
+            <p>Orders: #001</p>
+            <p>Status: Preparing</p>
+
+            <button>Mark as Ready</button>
+          </div>
+        </section>
+
+        <!-- ===== Section 4: Ready for Pickup ===== -->
+        <section>
+          <h2>Ready for Pickup</h2>
+
+          <div>
+            <p>Order: #001</p>
+            <p>Status: Waiting for Rider</p>
+          </div>
+        </section>
+
+        <!-- ===== Section 5: Completed Orders ===== -->
+        <section>
+          <h2>Completed Orders</h2>
+
+          <div>
+            <p>Order: #001</p>
+            <p>Status: Delivered</p>
+          </div>
+        </section>
+
+        <!-- LOGOUT -->
+        <section class="logout-section">
+          <button id="logoutBtn">Logout</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -5,62 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/styles/rider-dashboard.css" />
-    <title>Rider || Dashbord</title>
+    <title>Rider || Dashboard</title>
   </head>
+
   <body>
     <div class="container">
-      <!-- ==================== HEADER SECTION ==================== -->
+      <!-- ================= HEADER ================= -->
       <header>
-        <!-- 🌐 Navigation Bar -->
         <nav class="navbar">
-          <a class="beta" href="/index.html">
+          <a href="/index.html">
             <img
               class="logo-md"
               src="/images/Orange Modern Cargo Delivery Company Logo.png"
               alt="Paucek logo"
-          /></a>
+            />
+          </a>
         </nav>
       </header>
 
-      <!-- ========== MAIN SECTION ========== -->
+      <!-- ================= MAIN ================= -->
       <main>
-        <section class="rider-dashboard-hearder">
-          <h1>My Deliveries</h1>
-          <p>Here! you can manage the Deliveries assigned to you</p>
+        <!-- DASHBOARD HEADER -->
+        <section class="rider-dashboard-header">
+          <h1>Rider Dashboard</h1>
+          <p>Manage deliveries and track your earnings</p>
         </section>
 
-        <!-- Delivery-list section -->
+        <!-- STATUS + WALLET -->
+        <section class="rider-top">
+          <div class="status-box">
+            <h3>Status</h3>
+            <button id="toggleStatus" class="online">🟢 Online</button>
+          </div>
+
+          <div class="wallet-box">
+            <h3>Wallet</h3>
+            <p>₦<span id="wallet-balance">0</span></p>
+
+            <!-- NEW -->
+            <div class="withdraw-section">
+              <input
+                type="number"
+                id="withdraw-amount"
+                placeholder="Enter amount"
+              />
+              <button id="withdrawBtn">Withdraw</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ACTIVE DELIVERY -->
+        <section id="active-delivery" class="active-delivery hidden">
+          <h2>🚚 Active Delivery</h2>
+
+          <p><strong>Pickup:</strong> <span id="active-pickup"></span></p>
+          <p><strong>Drop-off:</strong> <span id="active-dropoff"></span></p>
+          <p><strong>Price:</strong> ₦<span id="active-price"></span></p>
+
+          <button id="startDelivery" class="btn-start">Start Delivery</button>
+
+          <button id="completeDelivery" class="btn-complete hidden">
+            Mark as Delivered
+          </button>
+        </section>
+
+        <!-- AVAILABLE ORDERS -->
         <section class="delivery-list">
+          <h2>Available Orders</h2>
+
           <table>
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Pickup</th>
                 <th>Drop-off</th>
-                <th>Package</th>
-                <th>Status</th>
+                <th>Price</th>
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>001</td>
-                <td>10 Ozumba Mbadiwe Avenue, Victoria Island</td>
-                <td>22 Bourdillon Road, Ikoyi</td>
-                <td>Small parcel</td>
-                <td><span class="pending">Pending</span></td>
-                <td><a href="" class="accept">Accept</a></td>
-              </tr>
+
+            <tbody id="orders-table">
+              <!-- Orders will be inserted by JS -->
             </tbody>
           </table>
         </section>
 
-        <section class="delivery-state">
-          <p>No Deliveries assigned yet. Please check back later.</p>
+        <!-- EMPTY STATE -->
+        <section class="delivery-state" id="empty-state">
+          <p>No Deliveries available yet.</p>
+        </section>
+
+        <!-- LOGOUT -->
+        <section class="logout-section">
+          <button id="logoutBtn">Logout</button>
         </section>
       </main>
-
-      <script src="/scripts/rider.js"></script>
     </div>
+
+    <script src="/scripts/rider.js"></script>
   </body>
 </html>

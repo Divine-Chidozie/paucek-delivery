@@ -1,0 +1,27 @@
+.merchant-dashboard-header {
+  margin-bottom: 20px;
+  /* background-color: red; */
+}
+
+.merchant-dashboard-header h1 {
+  font-size: 28px;
+}
+
+.merchant-dashboard-header p {
+  color: #666;
+}
+
+/* ===== MAIN SECTION ===== */
+.main-section {
+  /* background-color: green; */
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.product-section {
+}
