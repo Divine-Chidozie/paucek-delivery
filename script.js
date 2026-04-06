@@ -30,9 +30,14 @@ document
 const riderDispatch = document.getElementById("rider-dispatch");
 riderDispatch.onclick = function (event) {
   event.preventDefault();
-  alert("Please login first");
+  // alert("Please login first");
 
-  const windowLocation = `pages/login.html`;
+  alert(
+    "Redirecting to the Merchant page first, Don't forget add back the login page later",
+  );
+
+  // const windowLocation = `pages/login.html`;
+  const windowLocation = `pages/merchant-dashboard.html`;
   window.location.href = `${windowLocation}`;
 };
 
