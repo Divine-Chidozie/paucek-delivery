@@ -4,7 +4,7 @@
 }
 
 .merchant-dashboard-header h1 {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .merchant-dashboard-header p {
@@ -32,7 +32,7 @@
 
 h2 {
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 button {
@@ -41,7 +41,7 @@ button {
   border-radius: 2px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 
 .new-product-btn {
@@ -56,6 +56,9 @@ button {
   gap: 10px;
 }
 
+.product-card p {
+  font-size: 14px;
+}
 .edit-btn {
   background-color: #666;
   color: #fff;
@@ -93,7 +96,7 @@ button {
 }
 
 .id p {
-  font-size: 1.5rem;
+  font-size: 13px;
 }
 
 .customer,

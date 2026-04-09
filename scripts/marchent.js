@@ -9,7 +9,7 @@ addNewProduct.onclick = function () {
 function editProductBtn() {
   setTimeout(() => {
     alert("Sorry, can't edit produt details, feature not available!");
-  }, 2000);
+  }, 1000);
 }
 
 deleteProductBtn.addEventListener("click", () => {
@@ -18,8 +18,11 @@ deleteProductBtn.addEventListener("click", () => {
   );
 
   if (confirmDeleteProduct === true) {
-    console.log("Product deleted");
-    deleteProductBtn.classList.add("delete");
+    // console.log("Product deleted");
+    // deleteProductBtn.classList.add("delete");
+    addNewProduct.style.backgroundColor = "blue";
+    addNewProduct.style.color = "white";
+    addNewProduct.style.focus = "ON";
   } else {
     deleteProductBtn.classList.remove("delete");
   }

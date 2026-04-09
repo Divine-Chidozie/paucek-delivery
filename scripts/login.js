@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", (e) => {
   } else if (accountType === "rider") {
     window.location.href = "/pages/rider-dashboard.html";
   } else if (accountType === "merchant") {
-    window.location.href = "/pages/marchent-dashboard.html";
+    window.location.href = "/pages/merchant-dashboard.html";
   }
 });
 

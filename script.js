@@ -36,8 +36,8 @@ riderDispatch.onclick = function (event) {
     "Redirecting to the Merchant page first, Don't forget add back the login page later",
   );
 
-  // const windowLocation = `pages/login.html`;
-  const windowLocation = `pages/merchant-dashboard.html`;
+  const windowLocation = `pages/login.html`;
+
   window.location.href = `${windowLocation}`;
 };
 

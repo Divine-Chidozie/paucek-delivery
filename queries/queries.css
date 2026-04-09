@@ -25,11 +25,28 @@
 /* MD - TABLETS: 768PX - 1024PX */
 
 @media (max-width: 51rem) {
-  /* 815px / 16px = 51rem */
-  /* 51rem x 16px = 815px */
-
   html {
     font-size: 50%;
+  }
+
+  .product-section {
+    width: 100% !important;
+
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .product-btn-container {
+    display: flex;
+    flex-direction: column !important;
+    gap: 5px;
   }
 }
 
@@ -51,6 +68,14 @@
   .feattures-grid-container {
     row-gap: 5rem;
     column-gap: 0.5rem;
+  }
+
+  .product-btn-container {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
 }
 
@@ -96,5 +121,16 @@
   .cta-card {
     padding: 4rem 8rem;
     text-align: center;
+  }
+
+  /* ==== Rider-Dashboard Responsivness ===== */
+
+  .rider-top {
+    flex-direction: column;
+  }
+
+  /* ===== Merchant-Dashboard Responsivness ===== */
+  h1 {
+    font-size: 3.5rem !important;
   }
 }
