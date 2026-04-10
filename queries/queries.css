@@ -77,6 +77,21 @@
     align-items: center;
     gap: 5px;
   }
+
+  .order-card {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .id {
+    flex-basis: 200;
+    width: 100%;
+
+    /* background-color: red; */
+  }
 }
 
 /* XS - PHONE PORTRAINT: < 576px */
