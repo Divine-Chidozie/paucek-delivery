@@ -160,6 +160,10 @@ body {
   background: #1d7dd9;
 }
 
+.logout-account {
+  cursor: pointer;
+}
+
 /* Filter Section */
 .filter-section {
   max-width: 400px;

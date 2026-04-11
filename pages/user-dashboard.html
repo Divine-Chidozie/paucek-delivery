@@ -24,9 +24,20 @@
           <div class="settings-menu">
             <button id="settings-btn">⚙️</button>
             <ul id="settings-dropdown" class="hidden">
-              <li><a href="/pages/profile.html">Profile</a></li>
-              <li><a href="/pages/notifications.html">Notifications</a></li>
-              <li><a href="/pages/support.html">Support</a></li>
+              <li>
+                <a id="profile" href="/pages/profile.html">Profile</a>
+              </li>
+              <li>
+                <a id="notification" href="/pages/notifications.html"
+                  >Notifications</a
+                >
+              </li>
+              <li>
+                <a id="support" href="/pages/support.html">Support</a>
+              </li>
+              <li>
+                <a id="logout" class="logout-account">logout</a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -74,7 +85,7 @@
               <strong>Drop-off:</strong> 8 Adeniran Ogunsanya Street, Surulere
             </p>
             <p><strong>Package:</strong> Envelope</p>
-            <a href="#" class="btn btn-track">View Receipt</a>
+            <a href="#" id="receipt-btn" class="btn btn-track">View Receipt</a>
           </div>
 
           <div class="card in-progress">
@@ -84,7 +95,9 @@
             </div>
             <p><strong>Drop-off:</strong> 15 Herbert Macaulay Way, Yaba</p>
             <p><strong>Package:</strong> Medium Bag</p>
-            <a href="#" class="btn btn-track">Track Delivery</a>
+            <a href="#" id="delivery-btn" class="btn btn-track"
+              >Track Delivery</a
+            >
           </div>
 
           <div class="card cancelled">
@@ -96,7 +109,9 @@
               <strong>Drop-off:</strong> 18 Mobolaji Bank Anthony Way, Ikeja
             </p>
             <p><strong>Package:</strong> Large Parcel</p>
-            <a href="#" class="btn btn-track disabled">Cancelled</a>
+            <a href="#" id="cancel-btn" class="btn btn-track disabled"
+              >Cancelled</a
+            >
           </div>
         </section>
 

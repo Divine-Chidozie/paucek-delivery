@@ -70,6 +70,44 @@
     column-gap: 0.5rem;
   }
 
+  .merchant-dashboard-header h1 {
+    font-size: 25px;
+  }
+
+  .merchant-dashboard-header p {
+    font-size: 20px;
+  }
+
+  .product-section h2,
+  .incoming-orders h2,
+  .preparing-state h2,
+  .pickup-state h2,
+  .complete-orders-headings {
+    letter-spacing: normal;
+  }
+
+  .new-product-btn,
+  .edit-btn,
+  .delete-btn,
+  .accept-order-btn,
+  .reject-order-btn,
+  .mark-ready-btn {
+    font-size: 14px;
+  }
+
+  #logout {
+    justify-content: left;
+  }
+
+  #logoutBtn {
+    font-size: 15px;
+  }
+
+  .order-card-btn-container {
+    width: 100%;
+    flex-direction: row;
+  }
+
   .product-btn-container {
     display: flex;
     flex-direction: row !important;
@@ -145,7 +183,4 @@
   }
 
   /* ===== Merchant-Dashboard Responsivness ===== */
-  h1 {
-    font-size: 3.5rem !important;
-  }
 }
