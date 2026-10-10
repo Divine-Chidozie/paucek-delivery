@@ -1,81 +1,45 @@
-const addNewProduct = document.getElementById("new-product");
-document.getElementById("edit-button").onclick = editProductBtn;
-const deleteProductBtn = document.getElementById("delete-button");
+const newProduct = document.getElementById("new-product");
+const editBtn = document.getElementById("edit-button");
+const deleteBtn = document.getElementById("delete-button");
+
+const acceptOrderBtn = document.getElementById("accept-order-btn");
+const rejectOrderBtn = document.getElementById("reject-order-btn");
 const markReadyBtn = document.getElementById("mark-ready-btn");
 
-addNewProduct.onclick = function () {
-  // window.location.href = "/pages/request-delivery.html";
+const productBtnId = [newProduct, editBtn, deleteBtn];
+const productIdMessage =
+  "This feature is not yet availabe, kindly check back soon.";
 
-  const newProduct = "We are working on this feature.. stay turned!";
-  window.alert(`${newProduct}`);
-};
-
-function editProductBtn() {
-  let editProduct = "Sorry, product not available, please check back!";
-  setTimeout(() => {
-    alert(`${editProduct}`);
-  }, 1000);
-}
-
-deleteProductBtn.addEventListener("click", () => {
-  // const confirmDeleteProduct = confirm(
-  //   "Are you sure you want to delete product!",
-  // );
-  // if (confirmDeleteProduct === true) {
-  //   addNewProduct.style.backgroundColor = "blue";
-  //   addNewProduct.style.color = "white";
-  //   addNewProduct.style.focus = "ON";
-  // } else {
-  //   deleteProductBtn.classList.remove("delete");
-  // }
-  const trueDelete = "Error... try again later";
-  const returnDelete = "Cancelled!";
-
-  const confirmDeleteProduct = confirm(
-    "Are you sure you want to delete this product.",
-  );
-
-  if (confirmDeleteProduct) {
-    setTimeout(() => {
-      window.alert(trueDelete);
-    }, 1000);
-  } else {
-    setTimeout(() => {
-      window.alert(returnDelete);
-    }, 1000);
-  }
+productBtnId.forEach((element) => {
+  element.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.alert(productIdMessage);
+  });
 });
 
-const acceptOrderButton = document.getElementById("accept-order-button");
-const rejectOrderButton = document.getElementById("reject-order-button");
+const orderBtnId = [acceptOrderBtn, rejectOrderBtn, markReadyBtn];
+const orderIdMessage =
+  "Ooops! this feature is under maintaince 🚦, please check back later.";
 
-acceptOrderButton.addEventListener("click", function (e) {
-  window.alert("We are working to bring this feature live");
-});
-
-function order(newOrder) {
-  rejectOrderButton.onclick = function () {
-    alert(newOrder);
-    console.error(newOrder);
+orderBtnId.forEach(function (element) {
+  element.onclick = function () {
+    window.alert(orderIdMessage);
   };
-}
-order("We are working to bring this feature live.");
-
-markReadyBtn.addEventListener("click", function () {
-  alert("This feature is still in development, please check back later..");
 });
 
-// ===== LOGOUT =====
-const logOut = document.getElementById("logoutBtn");
-logOut.addEventListener("click", () => {
-  const confirmLogout = confirm("Are you sure you want to log out");
+const logoutContainer = document.getElementById("logout-container");
 
-  if (confirmLogout) {
-    localStorage.removeItem("currentUser");
-    // setTimeout(() => {
-    window.location.href = "/pages/login.html";
-    // }, 1000);
-  } else {
-    window.location.href;
-  }
+const logoutBtnYes = document.getElementById("logout-btn-yes");
+const logoutBtnNo = document.getElementById("logout-btn-no");
+
+logoutBtnYes.addEventListener("click", function () {
+  console.log("Logged out successfully");
+});
+
+const logOut = document.getElementById("logoutBtn");
+
+logOut.addEventListener("click", () => {
+  console.log(logoutContainer);
+
+  logoutContainer.classList.toggle(".show-logout-container");
 });

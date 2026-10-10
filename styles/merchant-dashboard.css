@@ -1,6 +1,9 @@
+.merchant-container {
+  position: relative;
+}
+
 .merchant-dashboard-header {
   margin-bottom: 20px;
-  /* background-color: red; */
 }
 
 .merchant-dashboard-header h1 {
@@ -147,4 +150,60 @@ button {
 #logout button {
   background-color: rgb(186, 17, 17);
   color: #fff;
+}
+
+/* Logout Section */
+.logout-container {
+  position: absolute;
+  width: 50%;
+  max-width: 450px;
+  top: 30%;
+  left: 30%;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+  background: rgb(254, 254, 254);
+  box-shadow: 0px 0px 4px silver;
+  border-radius: 3px;
+  display: none;
+}
+
+.show-logout-container {
+  display: flex;
+}
+
+.logout-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 200;
+}
+
+.logout-message p {
+  color: #000000;
+  font-size: 14px;
+}
+
+.logout-btn-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.yes-btn {
+  background-color: #339af0;
+  color: white;
+  padding: 5px 15px;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+.no-btn {
+  background-color: rgb(186, 17, 17);
+  color: white;
+  padding: 5px 15px;
+  font-size: 13px;
+  border-radius: 2px;
 }

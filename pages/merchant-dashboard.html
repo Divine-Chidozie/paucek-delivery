@@ -9,7 +9,7 @@
     <title>Marchent Account</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container merchant-container">
       <header>
         <nav class="navbar">
           <a href="/index.html">
@@ -79,10 +79,10 @@
             </div>
 
             <div class="order-card-btn-container">
-              <button id="accept-order-button" class="accept-order-btn">
+              <button id="accept-order-btn" class="accept-order-btn">
                 Accept Order
               </button>
-              <button id="reject-order-button" class="reject-order-btn">
+              <button id="reject-order-btn" class="reject-order-btn">
                 Reject Order
               </button>
             </div>
@@ -154,6 +154,17 @@
           <button id="logoutBtn">Logout</button>
         </section>
       </main>
+
+      <section id="logout-container" class="logout-container">
+        <div class="logout-message">
+          <p>Are you sure you want to log out</p>
+
+          <div class="logout-btn-container">
+            <button id="logout-btn-yes" class="yes-btn">Yes</button>
+            <button id="logout-btn-no" class="no-btn">No</button>
+          </div>
+        </div>
+      </section>
     </div>
 
     <script src="/scripts/marchent.js"></script>

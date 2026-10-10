@@ -1,52 +1,42 @@
-/* For devices with width 1200px or less */
-@media (max-width: 1200px) {
-  html {
-    font-size: 56.25%; /* 9px */
-  }
-}
-
-/* For devices with width 992px or less */
-@media (max-width: 992px) {
-  html {
-    font-size: 50%; /* 1rem = 8px */
-  }
-
+@media (max-width: 48rem) {
   .form-container {
-    max-width: 100%;
-    padding: 2rem;
+    max-width: 44rem;
+    padding: 3rem 2.4rem;
   }
 }
 
-/* For devices with width 768px or less */
-@media (max-width: 768px) {
-  .form-container {
-    width: 100% !important;
-    padding: 1.5rem;
-  }
-
-  form input,
-  form select {
-    width: 100%;
-    margin-bottom: 1.2rem;
-  }
-
-  .container-heading {
-    font-size: 2.4rem;
-  }
-}
-
-/* For small devices like phones (576px or less) */
-@media (max-width: 576px) {
-  .container-heading {
-    font-size: 24px;
-  }
-
+@media (max-width: 34rem) {
   .container {
-    padding: 1.5rem;
+    padding: 1.6rem;
   }
 
-  .register,
-  .register-link {
-    font-size: 16px;
+  .form-container {
+    margin: 1.6rem auto;
+    padding: 2.4rem 1.8rem;
+    border-radius: 1.4rem;
+  }
+
+  .brand {
+    margin-bottom: 2.4rem;
+  }
+
+  .form-heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .account-options {
+    gap: 0.8rem;
+  }
+
+  .account-option {
+    padding: 1rem 0.8rem;
+  }
+
+  .auth-divider {
+    gap: 0.8rem;
+  }
+
+  .auth-divider p {
+    font-size: 0.95rem;
   }
 }

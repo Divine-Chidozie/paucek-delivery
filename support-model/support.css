@@ -1,0 +1,17 @@
+#my-button {
+  font-size: 17px;
+  padding: 5px 10px;
+  font-weight: 500;
+  border: 2px solid teal;
+  color: teal;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px teal;
+  cursor: pointer;
+}
+
+.updated-btn {
+  background-color: red;
+  color: green;
+  border: none;
+  display: none;
+}

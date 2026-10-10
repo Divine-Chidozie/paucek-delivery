@@ -1,0 +1,549 @@
+/* ========================================
+   Paucek Deliveries - Vendor Dashboard
+======================================== */
+
+/* Header */
+.site-header {
+  background-color: #172b4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: 72px;
+  padding: 0 32px;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.site-header .navbar {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+}
+
+.vendor-brand-name {
+  color: #ffffff;
+}
+
+.vendor-brand-name span {
+  color: #f47721;
+}
+
+.notification-bell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notification-bell:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.notification-bell img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Main dashboard layout */
+.dashboard-layout {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 72px;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.menu-section {
+  position: fixed;
+  top: 72px;
+  bottom: 0;
+  left: 0;
+  width: 220px;
+  padding: 24px 16px;
+  background-color: #ffffff;
+  border-right: 1px solid #e8ebf0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.menu-heading {
+  margin: 0 0 20px;
+  padding: 0 12px;
+  color: #172b4d;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.menu-listing {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-listing li {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 7px;
+  color: #626d7d;
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.menu-link:hover {
+  color: #f47721;
+  background-color: #fff3e9;
+}
+
+.menu-link.active {
+  color: #f47721;
+  background-color: #fff0e5;
+  font-weight: 600;
+}
+
+.menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  font-size: 18px;
+}
+
+/* Main content */
+.vendor-display-section {
+  flex: 1;
+  min-width: 0;
+  margin-left: 220px;
+  padding: 32px;
+  background-color: #f7f8fa;
+  box-sizing: border-box;
+}
+
+.dashboard-heading {
+  margin-bottom: 24px;
+}
+
+.vendor-greeting {
+  margin: 0 0 8px;
+  color: #172b4d;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.vendor-greeting-overview {
+  margin: 0;
+  color: #737d8c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.container-div {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* New delivery call to action */
+.vendor-package-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  background-color: #f47721;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.package-content h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.package-content p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.new-delivery-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 11px 16px;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #df6414;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.new-delivery-button span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.new-delivery-button:hover {
+  background-color: #fff3e9;
+  transform: translateY(-1px);
+}
+
+/* Delivery statistics */
+.vendor-progress {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.con {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e8ebf0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.stat-label {
+  color: #697586;
+  font-size: 13px;
+}
+
+.count {
+  color: #172b4d;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-description {
+  color: #8a94a3;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Recent deliveries */
+.recent-deliveries-section {
+  margin-top: 32px;
+}
+
+.recent-deliveries-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.recent-delivery-heading {
+  margin: 0 0 6px;
+  color: #172b4d;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.recent-deliveries-description {
+  margin: 0;
+  color: #737d8c;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.view-all-link {
+  flex-shrink: 0;
+  color: #f47721;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-all-link:hover {
+  color: #df6414;
+  text-decoration: underline;
+}
+
+.delivery-address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.delivery-card {
+  padding: 18px 20px;
+  border: 1px solid #e8ebf0;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.delivery-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.delivery-id {
+  margin: 0 0 5px;
+  color: #8a94a3;
+  font-size: 11px;
+}
+
+.customer-name {
+  margin: 0;
+  color: #172b4d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.delivery-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.del-transit {
+  background-color: #fff2d8;
+  color: #8a5a00;
+}
+
+.del-delivered {
+  background-color: #e1f5e8;
+  color: #176b37;
+}
+
+/* Delivery route */
+.delivery-route {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #626d7d;
+  font-size: 12px;
+}
+
+.route-icon {
+  color: #f47721;
+  font-size: 10px;
+}
+
+.route-icon.destination {
+  color: #176b37;
+}
+
+.route-line {
+  width: 32px;
+  height: 1px;
+  background-color: #cbd2dc;
+}
+
+/* Keyboard accessibility */
+.menu-link:focus-visible,
+.new-delivery-button:focus-visible,
+.view-all-link:focus-visible,
+.notification-bell:focus-visible {
+  outline: 3px solid #f9a66e;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   Responsive styles
+======================================== */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1100px) {
+  .vendor-display-section {
+    padding: 28px 24px;
+  }
+
+  .vendor-progress {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vendor-package-section {
+    align-items: flex-start;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .site-header {
+    min-height: 64px;
+    padding: 0 16px;
+  }
+
+  .site-header .navbar {
+    min-height: 64px;
+  }
+
+  .dashboard-layout {
+    padding-top: 64px;
+  }
+
+  .menu-section {
+    display: none;
+  }
+
+  .vendor-display-section {
+    width: 100%;
+    margin-left: 0;
+    padding: 24px 16px;
+  }
+
+  .dashboard-heading {
+    margin-bottom: 20px;
+  }
+
+  .vendor-greeting {
+    font-size: 23px;
+  }
+
+  .vendor-package-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .package-content h2 {
+    font-size: 17px;
+  }
+
+  .new-delivery-button {
+    align-self: flex-start;
+  }
+
+  .vendor-progress {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .con {
+    padding: 16px;
+  }
+
+  .count {
+    font-size: 25px;
+  }
+
+  .recent-deliveries-section {
+    margin-top: 28px;
+  }
+
+  .delivery-card {
+    padding: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 420px) {
+  .site-header {
+    padding: 0 12px;
+  }
+
+  .notification-bell {
+    margin-left: 8px;
+  }
+
+  .vendor-brand-name {
+    font-size: 15px;
+  }
+
+  .vendor-display-section {
+    padding: 20px 12px;
+  }
+
+  .vendor-progress {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .con {
+    padding: 13px;
+    gap: 8px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .count {
+    font-size: 23px;
+  }
+
+  .stat-description {
+    font-size: 10px;
+  }
+
+  .recent-delivery-heading {
+    font-size: 16px;
+  }
+
+  .recent-deliveries-description {
+    font-size: 11px;
+  }
+
+  .delivery-card-top {
+    align-items: flex-start;
+  }
+
+  .delivery-route {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .route-line {
+    width: 18px;
+  }
+
+  .delivery-status {
+    padding: 4px 7px;
+    font-size: 10px;
+  }
+}

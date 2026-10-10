@@ -1,95 +1,37 @@
-/* LG - SMALL LAPTOPS: 1024px - 1280px */
-@media (max-width: 72rem) {
+@media (max-width: 48rem) {
   html {
-    font-size: 56.25%; /* 9px */
+    font-size: 56.25%;
   }
+
   .form-container {
-    width: 80%;
-    max-width: 1200px;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1.5rem;
-    box-sizing: border-box;
+    max-width: 42rem;
+    padding: 3rem 2.4rem;
   }
 }
 
-/* MD - TABLETS: 768PX - 1024PX */
-@media (max-width: 51rem) {
-  html {
-    font-size: 50%; /* 8px */
-  }
-  .form-container {
-    width: 80%;
-    max-width: 1200px;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1.5rem;
-    box-sizing: border-box;
-  }
-}
-
-/* SM - PHONE LANDSCAPE: 576PX - 768PX */
-@media (max-width: 43rem) {
-  html {
-    font-size: 43.75%; /* 7px */
-  }
-  .form-container {
-    width: 80%;
-    max-width: 1200px;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1.5rem;
-    box-sizing: border-box;
-  }
-}
-
-/* XS - PHONE PORTRAIT: < 576px */
 @media (max-width: 34rem) {
   html {
-    font-size: 45%; /* 6px */
-  }
-  .form-container {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 1.5rem; /* add padding on small screens */
-    padding-right: 1.5rem;
-    box-sizing: border-box;
+    font-size: 56.25%;
   }
 
-  h1 {
-    font-size: 2.4rem; /* override to keep heading readable */
-    font-weight: 600;
-  }
-  .register {
-    font-size: 1.5rem; /* fixed the comma to a dot */
-    /* Keeping it inline: No block, no center, no margin-top */
-    display: inline;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  .register-link:link,
-  .register-link:active,
-  .register-link:visited {
-    font-size: 1.5rem;
-  }
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1.5rem;
-    box-sizing: border-box;
+    padding: 1.6rem;
+  }
+
+  .form-container {
+    padding: 2.8rem 2rem;
+    border-radius: 1.4rem;
+  }
+
+  .brand {
+    margin-bottom: 2.4rem;
+  }
+
+  .form-heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .label-row {
+    align-items: flex-start;
   }
 }

@@ -4,266 +4,359 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- font awesome  -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- AOS Animation CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
+    <title>Paucek Deliveries | Reliable Package Delivery</title>
+    <meta
+      name="description"
+      content="Send packages with ease using Paucek Deliveries. Request pickups, track deliveries, and join our delivery rider network."
     />
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="queries/queries.css" />
-    <title>Paucek Deliveries</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <!-- NAVIGATION -->
-        <nav class="navbar">
-          <a class="beta" href="index.html">
-            <img
-              class="logo-md"
-              src="images/Orange Modern Cargo Delivery Company Logo.png"
-              alt="Paucek logo"
-          /></a>
+    <!-- Navigation -->
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a href="index.html" class="brand" aria-label="Paucek Deliveries home">
+          <img
+            src="images/Orange Modern Cargo Delivery Company Logo.png"
+            alt="Paucek Deliveries logo"
+            class="logo"
+          />
+          <span class="brand-name">Paucek <span>Deliveries</span></span>
+        </a>
 
-          <ul class="nav-btn-container">
-            <!-- <button id="toggleBtn" class="toggle-mode">🌙</button> -->
-            <input
-              id="toggleBtn"
-              class="toggle-mode"
-              type="button"
-              value="🌙"
-            />
-            <li>
-              <a
-                id="login"
-                class="btn btn-primary-outline login-btn"
-                href="pages/login.html"
-                >Login</a
-              >
-            </li>
-            <li>
-              <a
-                id="register"
-                class="btn btn-primary"
-                href="/pages/register.html"
-                >Register</a
-              >
-            </li>
-          </ul>
-        </nav>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="toggleBtn"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            title="Toggle dark mode"
+          >
+            <span aria-hidden="true">☾</span>
+          </button>
 
-        <!-- HERO SECTION -->
-        <section class="hero-section" data-aos="fade-down">
-          <h1 class="hero-heading">
-            <span class="highlight highlight-secondary">Delivering</span>
-            Your Favorites<br class="hero-heading-break" />
-            Right to Your Door 🚚
-          </h1>
-          <p class="hero-paragraph">
-            Send packages easily and track them in real time from pickup to
-            delivery
-          </p>
+          <a href="pages/login.html" class="nav-login">Log In</a>
+          <a href="pages/register.html" class="btn btn-primary nav-register">
+            Create Account
+          </a>
+        </div>
+      </nav>
+    </header>
 
-          <ul class="hero-btn-container">
-            <li>
-              <a
-                id="request-pickup"
-                class="btn btn-primary"
-                href="/pages/auth-choice.html"
-                >Request a Pickup</a
-              >
-            </li>
-          </ul>
-        </section>
-      </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container hero-container">
+          <div class="hero-content" data-aos="fade-up">
+            <span class="eyebrow">DELIVERY MADE SIMPLE</span>
 
-      <main>
-        <!-- FEATURE SECTION -->
-        <section
-          class="features-section"
-          data-aos="fade-up"
-          data-aos-delay="300"
-          data-aos-duration="1200"
-        >
-          <h2 class="features-main-heading">
-            How We Make Delivery Easy
-            <!-- Finally, a
-            <span class="highlight highlight-tertiary">simple and easy</span> to
-            use journel app -->
-          </h2>
+            <h1 class="hero-heading">
+              Delivering Your Packages,
+              <span class="highlight">Every Step of the Way.</span>
+            </h1>
 
-          <div class="features-grid-container" data-aos="fade-up">
-            <div>
-              <h3 class="feature-headings">Ride With Us</h3>
-              <p>
-                Earn on your own schedule. Join as a rider and start delivering
-                when it suits you.
-              </p>
+            <p class="hero-paragraph">
+              Send packages with ease, track your deliveries, and stay informed
+              from pickup to drop-off. Let Paucek Deliveries handle the journey.
+            </p>
+
+            <div class="hero-actions">
+              <a href="pages/register.html" class="btn btn-primary">
+                Request a Pickup
+              </a>
+              <a href="#how-it-works" class="btn btn-outline"> How It Works </a>
             </div>
-            <img
-              class="feature-img"
-              src="images/delivery-1.png"
-              alt="Delivering person picking up package"
-            />
 
-            <div data-aos="fade-up">
-              <h3 class="feature-headings">Track Every Move</h3>
-              <p>
-                Stay informed with real-time location tracking from pickup to
-                drop-off. Whether you're sending or receiving, our platform
-                keeps you updated every step of the way.
-              </p>
-            </div>
-            <img
-              class="feature-img feature-img-swap-order"
-              src="images/delivery-2.png"
-              alt="Package being tracked in real time"
-            />
-            <div data-aos="fade-left">
-              <h3 class="feature-headings">Delivered with Care</h3>
-              <p>
-                We ensure every package is handled safely and delivered on time.
-              </p>
-            </div>
-            <img
-              class="feature-img"
-              src="images/delivery-3.png"
-              alt="Package delivered safely to customer"
-            />
+            <p class="hero-note">
+              Need a delivery partner?
+              <a href="#become-a-rider">Join our rider network</a>
+            </p>
           </div>
-        </section>
 
-        <!-- CTA SECTION -->
-        <div class="cta-section" data-aos="fade-up">
-          <div class="cta-card">
-            <h2 class="cta-heading">
-              Deliver packages on your own schedule and earn with every trip
-            </h2>
-            <a id="rider-dispatch" class="btn btn-secondary" href=""
-              >Start Delivering</a
+          <div class="hero-visual" data-aos="fade-left">
+            <div class="hero-image-wrap">
+              <img
+                src="images/delivery-1.png"
+                alt="Package ready for delivery"
+                class="hero-image"
+              />
+            </div>
+
+            <div class="delivery-badge">
+              <span class="badge-icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>Delivery made easier</strong>
+                <span>From pickup to drop-off</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section section-padding" id="features">
+        <div class="container">
+          <div class="section-heading" data-aos="fade-up">
+            <span class="eyebrow">WHY PAUCEK?</span>
+            <h2>A Smarter, Simpler Way to Deliver</h2>
+            <p>
+              Everything you need to send and follow your packages with
+              confidence.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card" data-aos="fade-up">
+              <div class="feature-image-wrap">
+                <img
+                  src="images/delivery-1.png"
+                  alt="Package pickup"
+                  class="feature-img"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Easy Pickup Requests</h3>
+              <p>
+                Arrange a package pickup with a straightforward process that
+                saves you time and effort.
+              </p>
+            </article>
+
+            <article
+              class="feature-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
             >
+              <div class="feature-image-wrap">
+                <img
+                  src="images/delivery-2.png"
+                  alt="Tracking a package"
+                  class="feature-img"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Track Your Package</h3>
+              <p>
+                Stay informed about your delivery and follow its progress
+                throughout the journey.
+              </p>
+            </article>
+
+            <article
+              class="feature-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="feature-image-wrap">
+                <img
+                  src="images/delivery-3.png"
+                  alt="Carefully handled delivery package"
+                  class="feature-img"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Handled with Care</h3>
+              <p>
+                We aim to make every delivery experience dependable, smooth, and
+                convenient.
+              </p>
+            </article>
           </div>
         </div>
-      </main>
+      </section>
 
-      <footer>
-        <!-- FOOTER SECTION -->
-        <div class="footer-section" data-aos="fade-up">
-          <a href="index.html">
+      <!-- How It Works -->
+      <section class="how-section section-padding" id="how-it-works">
+        <div class="container">
+          <div class="section-heading" data-aos="fade-up">
+            <span class="eyebrow">THREE SIMPLE STEPS</span>
+            <h2>How It Works</h2>
+            <p>Getting your package moving doesn't have to be complicated.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card" data-aos="fade-up">
+              <span class="step-number">01</span>
+              <h3>Request a Pickup</h3>
+              <p>
+                Provide your package details and the information needed to
+                arrange your delivery.
+              </p>
+            </article>
+
+            <article class="step-card" data-aos="fade-up" data-aos-delay="100">
+              <span class="step-number">02</span>
+              <h3>Track Your Delivery</h3>
+              <p>
+                Follow your package's progress and stay updated as it moves
+                towards its destination.
+              </p>
+            </article>
+
+            <article class="step-card" data-aos="fade-up" data-aos-delay="200">
+              <span class="step-number">03</span>
+              <h3>Complete Your Delivery</h3>
+              <p>
+                Your package reaches its destination, bringing your delivery
+                journey to a close.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rider Call to Action -->
+      <section class="rider-section section-padding" id="become-a-rider">
+        <div class="container">
+          <div class="rider-card" data-aos="zoom-in">
+            <div class="rider-content">
+              <span class="eyebrow rider-eyebrow">JOIN OUR NETWORK</span>
+              <h2>Turn Every Delivery into an Opportunity</h2>
+              <p>
+                Join the Paucek Deliveries rider network and become part of a
+                team helping packages get where they need to go.
+              </p>
+              <a
+                href="pages/auth-choice.html"
+                class="btn btn-light"
+                id="rider-dispatch"
+              >
+                Become a Delivery Rider
+              </a>
+            </div>
+
+            <div class="rider-visual">
+              <img
+                src="images/delivery-3.png"
+                alt="Delivery rider opportunity"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
             <img
-              class="logo-sm"
               src="images/Orange Modern Cargo Delivery Company Logo.png"
-              alt="Quill logo"
-          /></a>
-          <!-- Add in social media icons later -->
-          <ul class="social-icons-container">
-            <li>
-              <a href="https://www.instagram.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="images/logo-instagram.svg"
-                  alt="instagram logo"
-              /></a>
-            </li>
+              alt="Paucek Deliveries logo"
+              class="logo"
+              loading="lazy"
+            />
+            <span class="brand-name">Paucek <span>Deliveries</span></span>
+          </a>
+          <p>Making package delivery simpler, one delivery at a time.</p>
+        </div>
 
-            <li>
-              <a href="https://facebook.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="images/logo-facebook.svg"
-                  alt="facebook logo"
-              /></a>
-            </li>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="#features">Our Services</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#become-a-rider">Become a Rider</a>
+        </div>
 
-            <li>
-              <a href="https://tiktok.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="images/logo-tiktok.svg"
-                  alt="tiktok logo"
-              /></a>
-            </li>
+        <div class="footer-links">
+          <h3>Your Account</h3>
+          <a href="pages/login.html">Log In</a>
+          <a href="pages/register.html">Create Account</a>
+        </div>
+      </div>
 
-            <li>
-              <a href="https://linkedin.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="images/logo-linkedin.svg"
-                  alt="linkedin logo"
-              /></a>
-            </li>
-
-            <li>
-              <a href="https://youtube.com/" target="_blank"
-                ><img
-                  class="social-icons"
-                  src="images/logo-youtube.svg"
-                  alt="youtube logo"
-              /></a>
-            </li>
-          </ul>
-
-          <ul class="footer-links-container">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="/pages/login.html">Login</a></li>
-            <li><a href="/pages/register.html">Register</a></li>
-          </ul>
-          <p class="small-text">
-            Made with <span class="heart-icon">♥</span> in Nigeria
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            &copy; <span id="currentYear"></span> Paucek Deliveries. All rights
+            reserved.
           </p>
         </div>
-      </footer>
+      </div>
+    </footer>
+
+    <!-- Customer Support Chat Widget -->
+    <div class="chat-widget">
+      <button
+        type="button"
+        class="chat-toggle"
+        id="chatToggle"
+        aria-label="Open customer support chat"
+        aria-expanded="false"
+        aria-controls="chatPanel"
+      >
+        <span aria-hidden="true">✉</span>
+      </button>
+
+      <section class="chat-panel" id="chatPanel" aria-label="Customer support">
+        <div class="chat-header">
+          <div>
+            <strong>Paucek Support</strong>
+            <span>How can we help?</span>
+          </div>
+
+          <button
+            type="button"
+            class="chat-close"
+            id="chatClose"
+            aria-label="Close chat"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="chat-body">
+          <p class="chat-greeting">Hi 👋 How can we help you?</p>
+          <p class="chat-note">
+            Send us a message and our team will assist you.
+          </p>
+        </div>
+
+        <form class="chat-form" id="chatForm">
+          <input
+            type="text"
+            id="chatMessage"
+            name="message"
+            placeholder="Type a message..."
+            aria-label="Your message"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" aria-label="Send message">Send</button>
+        </form>
+      </section>
     </div>
 
-    <div class="chat-container">
-      <a id="support-assitance-link" href="#">
-        <img
-          id="chat-icon-logo"
-          class="chat-icon"
-          src="images/chat.svg"
-          alt="chat icon"
-        />
-      </a>
-    </div>
-
-    <div id="chatbox" class="chatbox hidden">
-      <!-- Chat Support -->
-      <div class="chat-header">
-        <span>Support</span>
-        <button id="closeChat">✖</button>
-      </div>
-
-      <!-- Chat Message -->
-      <div id="chatMessages" class="chat-messages">
-        <div class="message bot">Hi 👋 How can we help you?</div>
-      </div>
-
-      <!-- Chat Send -->
-      <div class="chat-input">
-        <input id="chatInput" type="text" placeholder="Type a message...." />
-        <button id="sendMessage">Send</button>
-      </div>
-    </div>
-
-    <!-- AOS JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Scripts: load each file only once -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
+      if (window.AOS) {
+        AOS.init({
+          duration: 700,
+          once: true,
+          offset: 60,
+        });
+      }
     </script>
-
     <script src="script.js"></script>
   </body>
 </html>
+```

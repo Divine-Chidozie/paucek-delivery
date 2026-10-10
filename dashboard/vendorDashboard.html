@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles/vendorDashboard.css" />
+
+    <title>Vendor Dashboard | Paucek Deliveries</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <nav
+        class="navbar container vendorContainer"
+        aria-label="Main navigation"
+      >
+        <a href="/index.html" class="brand" aria-label="Paucek Deliveries home">
+          <img
+            src="/images/Orange Modern Cargo Delivery Company Logo.png"
+            alt=""
+            class="logo"
+          />
+
+          <span class="brand-name vendor-brand-name">
+            Paucek <span>Deliveries</span>
+          </span>
+        </a>
+      </nav>
+
+      <button
+        class="notification-bell"
+        type="button"
+        aria-label="Notifications"
+        onclick="handleNotifications()"
+      >
+        <img src="/images/notification.svg" alt="" />
+      </button>
+    </header>
+
+    <!-- Main dashboard -->
+    <main class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="menu-section" aria-label="Dashboard sidebar">
+        <h2 class="menu-heading">Menu</h2>
+
+        <nav aria-label="Dashboard navigation">
+          <ul class="menu-listing">
+            <li>
+              <a
+                href="/pages/vendorDashboard.html"
+                class="menu-link active"
+                aria-current="page"
+              >
+                <span class="menu-icon" aria-hidden="true">⌂</span>
+                Overview
+              </a>
+            </li>
+
+            <li>
+              <a href="/pages/my-deliveries.html" class="menu-link">
+                <span class="menu-icon" aria-hidden="true">▤</span>
+                My Deliveries
+              </a>
+            </li>
+
+            <li>
+              <a href="/pages/new-delivery.html" class="menu-link">
+                <span class="menu-icon" aria-hidden="true">+</span>
+                New Delivery
+              </a>
+            </li>
+
+            <li>
+              <a href="/pages/profile.html" class="menu-link">
+                <span class="menu-icon" aria-hidden="true">○</span>
+                Profile
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Dashboard content -->
+      <section class="vendor-display-section">
+        <div class="dashboard-heading">
+          <div>
+            <h1 class="vendor-greeting">Good morning!</h1>
+
+            <p class="vendor-greeting-overview">
+              Here's your delivery overview.
+            </p>
+          </div>
+        </div>
+
+        <div class="container-div">
+          <!-- New delivery call to action -->
+          <section
+            class="vendor-package-section"
+            aria-labelledby="package-heading"
+          >
+            <div class="package-content">
+              <h2 id="package-heading">Ready to send a package?</h2>
+
+              <p>Create a delivery request to get started.</p>
+            </div>
+
+            <a href="/pages/new-delivery.html" class="new-delivery-button">
+              <span aria-hidden="true">+</span>
+              New Delivery
+            </a>
+          </section>
+
+          <!-- Delivery summary cards -->
+          <section class="vendor-progress" aria-label="Delivery statistics">
+            <article class="con total-container">
+              <span class="stat-label">Total Deliveries</span>
+              <span class="count">12</span>
+              <span class="stat-description">All delivery requests</span>
+            </article>
+
+            <article class="con transit-container">
+              <span class="stat-label">In Transit</span>
+              <span class="count">3</span>
+              <span class="stat-description">Currently on the way</span>
+            </article>
+
+            <article class="con delivered-container">
+              <span class="stat-label">Delivered</span>
+              <span class="count">8</span>
+              <span class="stat-description">Successfully completed</span>
+            </article>
+
+            <article class="con pending-container">
+              <span class="stat-label">Pending</span>
+              <span class="count">1</span>
+              <span class="stat-description">Awaiting processing</span>
+            </article>
+          </section>
+
+          <!-- Recent deliveries -->
+          <section
+            class="recent-deliveries-section"
+            aria-labelledby="recent-deliveries-heading"
+          >
+            <div class="recent-deliveries-header">
+              <div>
+                <h2
+                  id="recent-deliveries-heading"
+                  class="recent-delivery-heading"
+                >
+                  Recent Deliveries
+                </h2>
+
+                <p class="recent-deliveries-description">
+                  Keep track of your latest delivery requests.
+                </p>
+              </div>
+
+              <a href="/pages/my-deliveries.html" class="view-all-link">
+                View all
+              </a>
+            </div>
+
+            <div class="delivery-address-container">
+              <!-- Delivery 1 -->
+              <article class="delivery-card">
+                <div class="delivery-card-top">
+                  <div>
+                    <p class="delivery-id">PD-00001</p>
+                    <h3 class="customer-name">Customer A</h3>
+                  </div>
+
+                  <span class="delivery-status del-transit"> In Transit </span>
+                </div>
+
+                <div class="delivery-route">
+                  <span class="route-icon" aria-hidden="true">●</span>
+                  <span>Ikeja</span>
+                  <span class="route-line" aria-hidden="true"></span>
+                  <span class="route-icon destination" aria-hidden="true"
+                    >●</span
+                  >
+                  <span>Yaba</span>
+                </div>
+              </article>
+
+              <!-- Delivery 2 -->
+              <article class="delivery-card">
+                <div class="delivery-card-top">
+                  <div>
+                    <p class="delivery-id">PD-00002</p>
+                    <h3 class="customer-name">Customer B</h3>
+                  </div>
+
+                  <span class="delivery-status del-delivered"> Delivered </span>
+                </div>
+
+                <div class="delivery-route">
+                  <span class="route-icon" aria-hidden="true">●</span>
+                  <span>Ikorodu</span>
+                  <span class="route-line" aria-hidden="true"></span>
+                  <span class="route-icon destination" aria-hidden="true"
+                    >●</span
+                  >
+                  <span>Lekki</span>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function handleNotifications() {
+        alert("Notifications are not available yet.");
+      }
+    </script>
+  </body>
+</html>
