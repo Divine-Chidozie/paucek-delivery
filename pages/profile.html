@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manage your Paucek Deliveries vendor profile."
+    />
+    <title>Paucek Deliveries | My Profile</title>
+
+    <link rel="stylesheet" href="/styles/profile.css" />
+    <script src="/scripts/profile.js" defer></script>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <a href="/dashboard/vendorDashboard.html" class="brand">
+          <img
+            src="/images/Orange Modern Cargo Delivery Company Logo.png"
+            alt="Paucek Deliveries logo"
+          />
+          <span>Paucek <small>Deliveries</small></span>
+        </a>
+
+        <p class="sidebar-label">MENU</p>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <a href="/dashboard/vendorDashboard.html" class="nav-link">
+            <span class="nav-icon">⌂</span>
+            <span>Overview</span>
+          </a>
+
+          <a href="/pages/my-deliveries.html" class="nav-link">
+            <span class="nav-icon">▤</span>
+            <span>My Deliveries</span>
+          </a>
+
+          <a href="/pages/newDelivery.html" class="nav-link">
+            <span class="nav-icon">＋</span>
+            <span>New Delivery</span>
+          </a>
+
+          <a
+            href="/pages/profile.html"
+            class="nav-link active"
+            aria-current="page"
+          >
+            <span class="nav-icon">♙</span>
+            <span>My Profile</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-help">
+            <strong>Need help?</strong>
+            <p>
+              Contact the Paucek team if you need assistance with your account.
+            </p>
+          </div>
+
+          <button type="button" class="logout-button" id="logoutButton">
+            <span class="nav-icon">↪</span>
+            <span>Log Out</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="main-content">
+        <header class="topbar">
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            ☰
+          </button>
+
+          <div class="breadcrumb">
+            <span>Dashboard</span>
+            <span>/</span>
+            <strong>My Profile</strong>
+          </div>
+
+          <div class="topbar-user">
+            <span class="account-label">Vendor Account</span>
+            <div class="avatar" id="topAvatar">--</div>
+          </div>
+        </header>
+
+        <section class="page-content">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">ACCOUNT SETTINGS</p>
+              <h1>My Profile</h1>
+              <p class="page-description">
+                Manage your personal information and keep your account details
+                up to date.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-grid">
+            <!-- Profile form -->
+            <section class="card profile-card">
+              <div class="card-heading">
+                <div>
+                  <h2>Personal Information</h2>
+                  <p>
+                    View and update the personal details associated with your
+                    Paucek Deliveries vendor account.
+                  </p>
+                </div>
+              </div>
+
+              <div class="profile-identity">
+                <div class="avatar avatar-large" id="profileAvatar">--</div>
+                <div>
+                  <h3 id="profileDisplayName">Loading profile...</h3>
+                  <p>Vendor Account</p>
+                </div>
+              </div>
+
+              <div
+                class="form-message"
+                id="formMessage"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></div>
+
+              <form id="profileForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Enter your first name"
+                      autocomplete="given-name"
+                      minlength="2"
+                      maxlength="50"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Enter your last name"
+                      autocomplete="family-name"
+                      minlength="2"
+                      maxlength="50"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Loading email..."
+                    autocomplete="email"
+                    readonly
+                  />
+                  <small class="field-help">
+                    Your registered email address cannot be changed here.
+                  </small>
+                </div>
+
+                <div class="form-actions">
+                  <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelButton"
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    type="submit"
+                    class="button button-primary"
+                    id="saveButton"
+                  >
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <!-- Account information -->
+            <aside class="card account-card">
+              <div class="card-heading">
+                <div>
+                  <h2>Account Details</h2>
+                  <p>Information about your vendor account.</p>
+                </div>
+              </div>
+
+              <div class="account-detail">
+                <span>Account Type</span>
+                <strong>Vendor</strong>
+              </div>
+
+              <div class="account-detail">
+                <span>Account Status</span>
+                <strong class="status-active">
+                  <span class="status-dot"></span>
+                  Active
+                </strong>
+              </div>
+
+              <div class="account-detail">
+                <span>Member Since</span>
+                <strong id="memberSince">Loading...</strong>
+              </div>
+
+              <div class="account-note">
+                <span class="note-icon">i</span>
+                <p>
+                  Keep your profile information accurate so your account details
+                  remain up to date.
+                </p>
+              </div>
+            </aside>
+          </div>
+
+          <footer class="page-footer">
+            <p>
+              © <span id="currentYear"></span> Paucek Deliveries. All rights
+              reserved.
+            </p>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

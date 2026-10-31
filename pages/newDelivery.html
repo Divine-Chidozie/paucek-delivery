@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create and manage delivery requests with Paucek Deliveries."
+    />
+    <title>Create a Delivery | Paucek Deliveries</title>
+    <link rel="stylesheet" href="/styles/newDelivery.css" />
+    <script src="/scripts/newDelivery.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Create a delivery</h1>
+      <p>
+        Enter your delivery details, get a distance-based quote, and confirm
+        your request.
+      </p>
+    </header>
+
+    <main>
+      <form id="delivery-form">
+        <fieldset class="recipient-information">
+          <legend>Recipient Information</legend>
+
+          <div class="form-group">
+            <label for="recipient-name">Recipient's full name *</label>
+            <input
+              type="text"
+              id="recipient-name"
+              name="recipientName"
+              placeholder="Enter customer's name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="recipient-phone">Recipient's phone number *</label>
+            <input
+              type="tel"
+              id="recipient-phone"
+              name="recipientPhone"
+              placeholder="e.g. 08012345678"
+              autocomplete="tel"
+              inputmode="tel"
+              required
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="pickup-location">
+          <legend>Pickup Information</legend>
+
+          <div class="form-group">
+            <label for="contact-name">Pickup contact name *</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="pickupContactName"
+              placeholder="Who will hand over the package?"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pickup-phone">Pickup contact phone *</label>
+            <input
+              type="tel"
+              id="pickup-phone"
+              name="pickupPhone"
+              placeholder="e.g. 08012345678"
+              inputmode="tel"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pickup-autocomplete">Pickup address *</label>
+            <div id="pickup-autocomplete" class="autocomplete-container"></div>
+            <input type="hidden" id="pickup-address" name="pickupAddress" />
+            <small class="field-hint">
+              Search and select the correct pickup location.
+            </small>
+          </div>
+        </fieldset>
+
+        <fieldset class="delivery-destination">
+          <legend>Delivery Destination</legend>
+
+          <div class="form-group">
+            <label for="delivery-autocomplete">Delivery address *</label>
+            <div
+              id="delivery-autocomplete"
+              class="autocomplete-container"
+            ></div>
+            <input type="hidden" id="delivery-address" name="deliveryAddress" />
+            <small class="field-hint">
+              Search and select the customer's delivery location.
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="additional-direction">
+              Additional directions (optional)
+            </label>
+            <textarea
+              id="additional-direction"
+              name="additionalDirections"
+              placeholder="Landmark, gate colour, or directions"
+              rows="2"
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="package-details">
+          <legend>Package Details</legend>
+
+          <div class="form-group">
+            <label for="package-description">Package description *</label>
+            <input
+              type="text"
+              id="package-description"
+              name="packageDescription"
+              placeholder="e.g. clothing, shoes, accessories"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="package-size">Package size *</label>
+            <select id="package-size" name="packageSize" required>
+              <option value="">Select package size</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="special-instruction">
+              Special instructions (optional)
+            </label>
+            <textarea
+              id="special-instruction"
+              name="specialInstructions"
+              placeholder="Optional handling or delivery notes"
+              rows="3"
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <p class="review-para">
+          Your delivery fee will be estimated after you submit these details.
+          You can review the quote before confirming.
+        </p>
+
+        <p id="form-message" class="form-message" role="status"></p>
+
+        <button type="submit" id="create-delivery-btn">
+          Calculate Delivery Quote
+        </button>
+      </form>
+
+      <section id="quote-section" class="quote-section" hidden>
+        <h2>Your Delivery Quote</h2>
+        <p class="quote-intro">
+          Review the route and estimated fee before confirming.
+        </p>
+
+        <div class="quote-row">
+          <span>Road distance</span>
+          <strong id="quote-distance">—</strong>
+        </div>
+
+        <div class="quote-row">
+          <span>Estimated driving time</span>
+          <strong id="quote-duration">—</strong>
+        </div>
+
+        <div class="quote-row quote-total">
+          <span>Estimated delivery fee</span>
+          <strong id="quote-fee">—</strong>
+        </div>
+
+        <p class="quote-disclaimer">
+          This is a prototype estimate using temporary pricing rules. Final
+          rates will be configured by Paucek Deliveries.
+        </p>
+
+        <p id="quote-message" class="form-message" role="status"></p>
+
+        <button type="button" id="confirm-delivery-btn">
+          Confirm Delivery Request
+        </button>
+
+        <button type="button" id="edit-delivery-btn" class="secondary-button">
+          Edit Details
+        </button>
+      </section>
+    </main>
+  </body>
+</html>

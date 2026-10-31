@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Package | Paucek Deliveries</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 24px;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        color: #172033;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        max-width: 760px;
+        margin: 0 auto 36px;
+      }
+
+      .brand {
+        font-size: 20px;
+        font-weight: 800;
+        color: #f47721;
+      }
+
+      a {
+        color: #17365d;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      main {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 32px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 28px;
+      }
+
+      .intro {
+        color: #687386;
+        line-height: 1.6;
+      }
+
+      form {
+        margin-top: 24px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid #ccd3dd;
+        border-radius: 8px;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 14px;
+        padding: 14px;
+        border: 0;
+        border-radius: 8px;
+        background: #f47721;
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        opacity: 0.65;
+        cursor: wait;
+      }
+
+      #message {
+        margin-top: 18px;
+        line-height: 1.5;
+      }
+
+      #result {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid #e4e8ef;
+      }
+
+      #result[hidden] {
+        display: none;
+      }
+
+      .detail {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 13px 0;
+        border-bottom: 1px solid #edf0f4;
+      }
+
+      .detail span:first-child {
+        color: #687386;
+      }
+
+      .detail span:last-child {
+        text-align: right;
+        font-weight: 700;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 16px;
+        }
+
+        main {
+          padding: 22px;
+        }
+
+        .detail {
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .detail span:last-child {
+          text-align: left;
+        }
+      }
+    </style>
+
+    <script src="/scripts/track-package.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">PAUCEK DELIVERIES</div>
+      <a href="/">Home</a>
+    </header>
+
+    <main>
+      <h1>Track Your Package</h1>
+      <p class="intro">
+        Enter the tracking number provided when your delivery was created to
+        check its latest status.
+      </p>
+
+      <form id="trackingForm">
+        <label for="trackingNumber">Tracking number</label>
+        <input
+          id="trackingNumber"
+          name="trackingNumber"
+          type="text"
+          placeholder="PAU-7A2C91BF"
+          maxlength="12"
+          autocomplete="off"
+          required
+        />
+        <button id="trackButton" type="submit">Track Package</button>
+      </form>
+
+      <p id="message" role="status" aria-live="polite"></p>
+
+      <section id="result" hidden>
+        <h2>Tracking Details</h2>
+
+        <div class="detail">
+          <span>Tracking number</span>
+          <span id="resultTrackingNumber">—</span>
+        </div>
+
+        <div class="detail">
+          <span>Current status</span>
+          <span id="resultStatus">—</span>
+        </div>
+
+        <div class="detail">
+          <span>Request date</span>
+          <span id="resultCreatedAt">—</span>
+        </div>
+
+        <div class="detail">
+          <span>Road distance</span>
+          <span id="resultDistance">—</span>
+        </div>
+
+        <div class="detail">
+          <span>Estimated driving time</span>
+          <span id="resultDuration">—</span>
+        </div>
+
+        <div class="detail">
+          <span>Last updated</span>
+          <span id="resultUpdatedAt">—</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

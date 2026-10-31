@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manage your Paucek Deliveries requests, monitor delivery status, and track your packages."
+    />
+    <title>My Deliveries | Paucek Deliveries</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/my-deliveries.css" />
+    <script src="/scripts/my-deliveries.js" defer></script>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <a href="/index.html" class="brand" aria-label="Paucek Deliveries home">
+          <span class="brand-icon" aria-hidden="true">P</span>
+          <span class="brand-copy">
+            <strong>Paucek</strong>
+            <small>Deliveries</small>
+          </span>
+        </a>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <a href="/dashboard/vendorDashboard.html" class="nav-link">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+
+          <a
+            href="/pages/my-deliveries.html"
+            class="nav-link active"
+            aria-current="page"
+          >
+            <span class="nav-icon">▣</span>
+            <span>My Deliveries</span>
+          </a>
+
+          <a href="/pages/newDelivery.html" class="nav-link">
+            <span class="nav-icon">＋</span>
+            <span>New Delivery</span>
+          </a>
+
+          <a href="/pages/addresses.html" class="nav-link">
+            <span class="nav-icon">♧</span>
+            <span>Addresses</span>
+          </a>
+
+          <a href="/pages/profile.html" class="nav-link">
+            <span class="nav-icon">♙</span>
+            <span>Profile</span>
+          </a>
+
+          <a href="/pages/settings.html" class="nav-link">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-promo">
+          <div class="truck-illustration" aria-hidden="true">🚚</div>
+          <p>Delivering Your Packages,<br />Every Step of the Way.</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Toggle navigation"
+            id="menu-button"
+          >
+            ☰
+          </button>
+
+          <div class="topbar-right">
+            <button
+              class="notification-button"
+              type="button"
+              aria-label="Notifications"
+            >
+              ♧<span></span>
+            </button>
+
+            <div class="account">
+              <div class="account-avatar" id="account-avatar">V</div>
+              <div class="account-copy">
+                <strong id="account-name">Vendor Account</strong>
+                <small>Vendor</small>
+              </div>
+              <span class="account-chevron">⌄</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="page-container">
+          <div class="dashboard-grid">
+            <section class="main-column">
+              <header class="page-header">
+                <div>
+                  <h1>My Deliveries</h1>
+                  <p>
+                    View and manage all your deliveries. Track real-time status,
+                    check details, and stay updated from pickup to drop-off.
+                  </p>
+                </div>
+              </header>
+
+              <section class="create-banner">
+                <div class="banner-icon" aria-hidden="true">📦</div>
+
+                <div class="banner-copy">
+                  <h2>Need to send a package?</h2>
+                  <p>
+                    Create a new delivery and get an instant quote based on
+                    distance and package details.
+                  </p>
+                </div>
+
+                <a href="/pages/newDelivery.html" class="banner-button">
+                  <span>＋</span> New Delivery
+                </a>
+              </section>
+
+              <section class="filters" aria-label="Filter deliveries">
+                <label class="search-box" for="delivery-search">
+                  <span class="search-symbol" aria-hidden="true">⌕</span>
+                  <input
+                    type="search"
+                    id="delivery-search"
+                    placeholder="Search by tracking number, recipient name or address..."
+                    autocomplete="off"
+                  />
+                </label>
+
+                <label class="select-box" for="status-filter">
+                  <span class="sr-only">Filter by status</span>
+                  <select id="status-filter">
+                    <option value="all">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Assigned">Assigned</option>
+                    <option value="Picked Up">Picked Up</option>
+                    <option value="In Transit">In Transit</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Failed">Failed</option>
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
+                </label>
+
+                <label class="select-box date-filter" for="date-filter">
+                  <span class="sr-only">Filter by date</span>
+                  <select id="date-filter">
+                    <option value="30">Last 30 days</option>
+                    <option value="7">Last 7 days</option>
+                    <option value="90">Last 90 days</option>
+                    <option value="all">Any time</option>
+                  </select>
+                </label>
+
+                <button
+                  type="button"
+                  id="refresh-button"
+                  class="refresh-button"
+                  aria-label="Refresh deliveries"
+                  title="Refresh"
+                >
+                  ↻
+                </button>
+              </section>
+
+              <p
+                id="feedback-message"
+                class="feedback-message"
+                role="status"
+                aria-live="polite"
+              ></p>
+
+              <section class="table-card" aria-label="Delivery list">
+                <div class="table-scroll">
+                  <table class="deliveries-table">
+                    <thead>
+                      <tr>
+                        <th>Tracking No.</th>
+                        <th>Recipient</th>
+                        <th>Destination</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th><span class="sr-only">Actions</span></th>
+                      </tr>
+                    </thead>
+                    <tbody id="deliveries-list"></tbody>
+                  </table>
+                </div>
+
+                <div id="empty-state" class="empty-state" hidden>
+                  <div class="empty-icon" aria-hidden="true">📦</div>
+                  <h3 id="empty-title">No deliveries yet</h3>
+                  <p id="empty-description">
+                    Your delivery requests will appear here once you create your
+                    first delivery.
+                  </p>
+                  <a href="/pages/newDelivery.html" class="primary-button"
+                    >＋ New Delivery</a
+                  >
+                </div>
+
+                <div class="table-footer">
+                  <p id="pagination-summary">Showing 0 deliveries</p>
+                  <div class="pagination" id="pagination"></div>
+                </div>
+              </section>
+
+              <footer class="page-footer">
+                <span>© 2026 Paucek Deliveries</span>
+                <span>Delivering with care.</span>
+              </footer>
+            </section>
+
+            <aside class="right-column">
+              <section class="side-card summary-panel">
+                <h2><span class="panel-icon">▥</span> Delivery Summary</h2>
+
+                <div class="summary-grid">
+                  <div class="summary-item">
+                    <span class="summary-icon total-icon">▣</span>
+                    <div>
+                      <strong id="total-count">0</strong>
+                      <small>Total Deliveries</small>
+                    </div>
+                  </div>
+
+                  <div class="summary-item">
+                    <span class="summary-icon delivered-icon">✓</span>
+                    <div>
+                      <strong id="delivered-count">0</strong>
+                      <small>Delivered</small>
+                    </div>
+                  </div>
+
+                  <div class="summary-item">
+                    <span class="summary-icon transit-icon">🚚</span>
+                    <div>
+                      <strong id="transit-count">0</strong>
+                      <small>In Transit</small>
+                    </div>
+                  </div>
+
+                  <div class="summary-item">
+                    <span class="summary-icon cancelled-icon">×</span>
+                    <div>
+                      <strong id="cancelled-count">0</strong>
+                      <small>Cancelled</small>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="summary-note" id="summary-note">
+                  Your delivery activity at a glance.
+                </p>
+              </section>
+
+              <section class="side-card quick-actions">
+                <h2>
+                  <span class="panel-icon lightning">ϟ</span> Quick Actions
+                </h2>
+
+                <a href="/pages/newDelivery.html" class="quick-action">
+                  <span class="quick-icon">📦</span>
+                  <span>
+                    <strong>New Delivery</strong>
+                    <small>Create a new delivery request</small>
+                  </span>
+                  <b>›</b>
+                </a>
+
+                <a href="/pages/addresses.html" class="quick-action">
+                  <span class="quick-icon">📍</span>
+                  <span>
+                    <strong>Manage Addresses</strong>
+                    <small>Save and manage your addresses</small>
+                  </span>
+                  <b>›</b>
+                </a>
+
+                <a href="mailto:support@paucek.com" class="quick-action">
+                  <span class="quick-icon">◉</span>
+                  <span>
+                    <strong>Get Support</strong>
+                    <small>Contact our support team</small>
+                  </span>
+                  <b>›</b>
+                </a>
+              </section>
+
+              <section class="side-card tracking-promo">
+                <div class="map-illustration" aria-hidden="true">🗺️ 📍</div>
+                <h2>Track your deliveries<br />in real-time</h2>
+                <p>Stay updated on your package from pickup to drop-off.</p>
+                <a href="/pages/newDelivery.html">Learn more <span>→</span></a>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

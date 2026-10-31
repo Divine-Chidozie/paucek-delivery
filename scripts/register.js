@@ -4,17 +4,26 @@ const registerMessage = document.getElementById("register-message");
 const firstnameInput = document.getElementById("firstname");
 const lastnameInput = document.getElementById("lastname");
 const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const phoneField = document.getElementById("phone-field");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
 const termsInput = document.getElementById("terms");
 const googleSignUpButton = document.getElementById("google-sign-up");
 
+const submitButton = registerForm.querySelector('[type="submit"]');
+const originalButtonText = submitButton
+  ? submitButton.textContent.trim()
+  : "Create Account";
+
+const API_BASE_URL = "http://localhost:5000/api";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const errorIds = [
   "firstname-error",
   "lastname-error",
   "email-error",
+  "phone-error",
   "error-password",
   "confirm-password-error",
   "account-type-error",
@@ -40,10 +49,13 @@ function clearErrors() {
     firstnameInput,
     lastnameInput,
     emailInput,
+    phoneInput,
     passwordInput,
     confirmPasswordInput,
     termsInput,
-  ].forEach((input) => input.removeAttribute("aria-invalid"));
+  ]
+    .filter(Boolean)
+    .forEach((input) => input.removeAttribute("aria-invalid"));
 
   registerForm
     .querySelectorAll('input[name="accountType"]')
@@ -52,6 +64,35 @@ function clearErrors() {
   showMessage("");
 }
 
+function updateAccountFields() {
+  const selectedAccount = registerForm.querySelector(
+    'input[name="accountType"]:checked',
+  );
+
+  const isRider = selectedAccount?.value === "rider";
+
+  phoneField.hidden = !isRider;
+  phoneInput.required = isRider;
+
+  if (!isRider) {
+    phoneInput.value = "";
+    showError("phone-error", "");
+    phoneInput.removeAttribute("aria-invalid");
+  }
+}
+
+// Update the form when Vendor or Rider is selected.
+registerForm.querySelectorAll('input[name="accountType"]').forEach((input) => {
+  input.addEventListener("change", () => {
+    clearErrors();
+    updateAccountFields();
+  });
+});
+
+// Set the correct field visibility on initial page load.
+updateAccountFields();
+
+// Show and hide passwords.
 registerForm.querySelectorAll(".password-toggle").forEach((button) => {
   button.addEventListener("click", () => {
     const input = document.getElementById(button.dataset.target);
@@ -66,7 +107,8 @@ registerForm.querySelectorAll(".password-toggle").forEach((button) => {
   });
 });
 
-registerForm.addEventListener("submit", (event) => {
+// Vendor and rider registration.
+registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   clearErrors();
 
@@ -78,41 +120,12 @@ registerForm.addEventListener("submit", (event) => {
     isValid = false;
   }
 
-  if (!firstnameInput.value.trim()) {
-    markInvalid(firstnameInput, "firstname-error", "Enter your first name.");
-  }
-
-  if (!lastnameInput.value.trim()) {
-    markInvalid(lastnameInput, "lastname-error", "Enter your last name.");
-  }
-
-  const email = emailInput.value.trim();
-
-  if (!email || !emailPattern.test(email)) {
-    markInvalid(emailInput, "email-error", "Enter a valid email address.");
-  }
-
-  if (passwordInput.value.length < 8) {
-    markInvalid(
-      passwordInput,
-      "error-password",
-      "Your password must contain at least 8 characters.",
-    );
-  }
-
-  if (!confirmPasswordInput.value) {
-    markInvalid(
-      confirmPasswordInput,
-      "confirm-password-error",
-      "Confirm your password.",
-    );
-  } else if (confirmPasswordInput.value !== passwordInput.value) {
-    markInvalid(
-      confirmPasswordInput,
-      "confirm-password-error",
-      "Your passwords do not match.",
-    );
-  }
+  const firstName = firstnameInput.value.trim();
+  const lastName = lastnameInput.value.trim();
+  const email = emailInput.value.trim().toLowerCase();
+  const phone = phoneInput.value.trim();
+  const password = passwordInput.value;
+  const confirmPassword = confirmPasswordInput.value;
 
   const selectedAccount = registerForm.querySelector(
     'input[name="accountType"]:checked',
@@ -128,6 +141,44 @@ registerForm.addEventListener("submit", (event) => {
     isValid = false;
   }
 
+  if (!firstName) {
+    markInvalid(firstnameInput, "firstname-error", "Enter your first name.");
+  }
+
+  if (!lastName) {
+    markInvalid(lastnameInput, "lastname-error", "Enter your last name.");
+  }
+
+  if (!email || !emailPattern.test(email)) {
+    markInvalid(emailInput, "email-error", "Enter a valid email address.");
+  }
+
+  if (selectedAccount?.value === "rider" && !phone) {
+    markInvalid(phoneInput, "phone-error", "Enter your phone number.");
+  }
+
+  if (password.length < 8) {
+    markInvalid(
+      passwordInput,
+      "error-password",
+      "Your password must contain at least 8 characters.",
+    );
+  }
+
+  if (!confirmPassword) {
+    markInvalid(
+      confirmPasswordInput,
+      "confirm-password-error",
+      "Confirm your password.",
+    );
+  } else if (confirmPassword !== password) {
+    markInvalid(
+      confirmPasswordInput,
+      "confirm-password-error",
+      "Your passwords do not match.",
+    );
+  }
+
   if (!termsInput.checked) {
     markInvalid(
       termsInput,
@@ -141,11 +192,78 @@ registerForm.addEventListener("submit", (event) => {
     return;
   }
 
-  showMessage(
-    "Your details passed validation, but account creation is not connected yet. No account has been created.",
-  );
+  const accountType = selectedAccount.value;
+
+  const endpoint =
+    accountType === "rider"
+      ? `${API_BASE_URL}/riders/register`
+      : `${API_BASE_URL}/vendors/register`;
+
+  const accountLabel = accountType === "rider" ? "rider" : "vendor";
+
+  try {
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Creating Account...";
+    }
+
+    showMessage(`Creating your ${accountLabel} account...`);
+
+    const requestBody = {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+      accountType,
+      terms: termsInput.checked,
+    };
+
+    if (accountType === "rider") {
+      requestBody.phone = phone;
+    }
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      showMessage(data.message || "Registration failed. Please try again.");
+      return;
+    }
+
+    registerForm.reset();
+    updateAccountFields();
+    clearErrors();
+
+    if (accountType === "rider") {
+      showMessage(
+        "Your rider account has been created and is awaiting approval. You can log in to check your account status.",
+      );
+    } else {
+      showMessage("Your vendor account has been created successfully!");
+    }
+  } catch (error) {
+    console.error("Registration request failed:", error);
+
+    showMessage(
+      "Unable to connect to the server. Make sure the Paucek backend is running and try again.",
+    );
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  }
 });
 
+// Google sign-up is not connected yet.
 googleSignUpButton.addEventListener("click", () => {
   const selectedAccount = registerForm.querySelector(
     'input[name="accountType"]:checked',

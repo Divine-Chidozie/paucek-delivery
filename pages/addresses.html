@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f97316" />
+    <title>Saved Addresses | Paucek Deliveries</title>
+    <link rel="stylesheet" href="/styles/addresses.css" />
+    <script src="/scripts/addresses.js" defer></script>
+  </head>
+  <body>
+    <div class="app-layout">
+      <aside class="sidebar" id="sidebar">
+        <a href="/" class="brand">
+          <span class="brand-icon">P</span>
+          <span>Paucek<span class="brand-light"> Deliveries</span></span>
+        </a>
+
+        <p class="nav-heading">WORKSPACE</p>
+        <nav class="navigation">
+          <a href="/dashboard/vendorDashboard.html" class="nav-link">
+            <span>▦</span> Dashboard
+          </a>
+          <a href="/pages/newDelivery.html" class="nav-link">
+            <span>＋</span> Create Delivery
+          </a>
+          <a href="/pages/my-deliveries.html" class="nav-link">
+            <span>▤</span> My Deliveries
+          </a>
+          <a href="/pages/track-package.html" class="nav-link">
+            <span>⌖</span> Track Package
+          </a>
+          <a href="/pages/addresses.html" class="nav-link active">
+            <span>⌂</span> Saved Addresses
+          </a>
+          <a href="/pages/profile.html" class="nav-link">
+            <span>♙</span> My Profile
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="note-icon">📍</span>
+            <strong>Deliver smarter</strong>
+            <p>Save frequent locations to make future deliveries easier.</p>
+          </div>
+          <button type="button" id="logout-button" class="logout-button">
+            ↪ Sign out
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button
+            type="button"
+            id="menu-button"
+            class="menu-button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+
+          <div class="breadcrumb">Workspace <span>/</span> Saved Addresses</div>
+
+          <div class="account-area">
+            <div class="account-avatar" id="account-avatar">V</div>
+            <div class="account-info">
+              <strong id="account-name">Vendor Account</strong>
+              <span>Merchant</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="page-content">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">ADDRESS BOOK</p>
+              <h1>Saved Addresses</h1>
+              <p class="page-subtitle">
+                Keep your frequently used pickup and delivery locations in one
+                place.
+              </p>
+            </div>
+            <button
+              type="button"
+              id="add-address-button"
+              class="primary-button"
+            >
+              <span>＋</span> Add address
+            </button>
+          </div>
+
+          <div
+            id="feedback-message"
+            class="feedback"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <section class="stats-grid" aria-label="Address summary">
+            <article class="stat-card">
+              <div class="stat-icon orange">⌂</div>
+              <div>
+                <span>Total saved addresses</span>
+                <strong id="address-count">0</strong>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon navy">✓</div>
+              <div>
+                <span>Quick access</span>
+                <strong>Anytime</strong>
+              </div>
+            </article>
+          </section>
+
+          <section class="addresses-section">
+            <div class="section-heading">
+              <div>
+                <h2>Your address book</h2>
+                <p>Manage your saved locations and contact details.</p>
+              </div>
+              <button
+                type="button"
+                id="refresh-button"
+                class="secondary-button"
+              >
+                ↻ Refresh
+              </button>
+            </div>
+
+            <div id="loading-state" class="state-panel">
+              <span class="loader"></span>
+              <p>Loading your saved addresses...</p>
+            </div>
+
+            <div id="empty-state" class="state-panel" hidden>
+              <div class="empty-icon">⌖</div>
+              <h3>No saved addresses yet</h3>
+              <p>
+                Add your home, office, warehouse, or another frequently used
+                location.
+              </p>
+              <button
+                type="button"
+                id="empty-add-button"
+                class="primary-button"
+              >
+                Add your first address
+              </button>
+            </div>
+
+            <div id="addresses-grid" class="addresses-grid"></div>
+          </section>
+
+          <section class="address-form-panel" id="address-form-panel" hidden>
+            <div class="form-heading">
+              <div>
+                <p class="eyebrow">ADDRESS DETAILS</p>
+                <h2 id="form-title">Add a saved address</h2>
+                <p>Fields marked with * are required.</p>
+              </div>
+              <button
+                type="button"
+                id="close-form-button"
+                class="icon-button"
+                aria-label="Close form"
+              >
+                ✕
+              </button>
+            </div>
+
+            <form id="address-form">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="label">Address label *</label>
+                  <select id="label" name="label" required>
+                    <option value="Home">Home</option>
+                    <option value="Office">Office</option>
+                    <option value="Warehouse">Warehouse</option>
+                    <option value="Custom">Custom</option>
+                  </select>
+                </div>
+
+                <div class="form-field" id="custom-label-field" hidden>
+                  <label for="customLabel">Custom label *</label>
+                  <input
+                    type="text"
+                    id="customLabel"
+                    name="customLabel"
+                    maxlength="50"
+                    placeholder="e.g. Shop, Branch 2"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="contactName">Contact name *</label>
+                  <input
+                    type="text"
+                    id="contactName"
+                    name="contactName"
+                    maxlength="100"
+                    autocomplete="name"
+                    placeholder="Enter contact name"
+                    required
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="phone">Phone number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    maxlength="25"
+                    autocomplete="tel"
+                    placeholder="Enter phone number"
+                    required
+                  />
+                </div>
+
+                <div class="form-field full-width">
+                  <label for="address">Full address *</label>
+                  <textarea
+                    id="address"
+                    name="address"
+                    rows="3"
+                    maxlength="500"
+                    autocomplete="street-address"
+                    placeholder="Street, area, city, state"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-field full-width">
+                  <label for="additionalDirections"
+                    >Additional directions (optional)</label
+                  >
+                  <textarea
+                    id="additionalDirections"
+                    name="additionalDirections"
+                    rows="2"
+                    maxlength="500"
+                    placeholder="Landmarks, gate instructions, or directions"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="button"
+                  id="cancel-button"
+                  class="secondary-button"
+                >
+                  Cancel
+                </button>
+                <button type="submit" id="save-button" class="primary-button">
+                  Save address
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <footer class="page-footer">
+            <span>© <span id="current-year"></span> Paucek Deliveries</span>
+            <span>Every delivery, handled with care.</span>
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-overlay" id="delete-modal" hidden>
+      <section
+        class="confirm-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="delete-title"
+      >
+        <div class="delete-icon">!</div>
+        <h2 id="delete-title">Delete this address?</h2>
+        <p>
+          This saved address will be permanently removed from your address book.
+        </p>
+        <div class="modal-actions">
+          <button
+            type="button"
+            id="cancel-delete-button"
+            class="secondary-button"
+          >
+            Keep address
+          </button>
+          <button
+            type="button"
+            id="confirm-delete-button"
+            class="danger-button"
+          >
+            Delete address
+          </button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

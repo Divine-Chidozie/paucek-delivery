@@ -10,6 +10,13 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 const accountTypeError = document.getElementById("account-type-error");
 
+const API_BASE_URL = "http://localhost:5000/api";
+
+const DASHBOARDS = {
+  merchant: "http://localhost:5000/dashboard/vendorDashboard.html",
+  rider: "http://localhost:5000/dashboard/riderDashboard.html",
+};
+
 function clearErrors() {
   emailError.textContent = "";
   passwordError.textContent = "";
@@ -19,8 +26,9 @@ function clearErrors() {
   passwordInput.removeAttribute("aria-invalid");
 }
 
-function showMessage(message) {
+function showMessage(message, isError = false) {
   formMessage.textContent = message;
+  formMessage.style.color = isError ? "#dc2626" : "#15803d";
 }
 
 togglePassword.addEventListener("click", () => {
@@ -31,7 +39,7 @@ togglePassword.addEventListener("click", () => {
   togglePassword.setAttribute("aria-pressed", String(showPassword));
 });
 
-loginForm.addEventListener("submit", (event) => {
+loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   clearErrors();
@@ -39,6 +47,7 @@ loginForm.addEventListener("submit", (event) => {
 
   const email = emailInput.value.trim();
   const password = passwordInput.value;
+
   const accountType = loginForm.querySelector(
     'input[name="accountType"]:checked',
   );
@@ -63,25 +72,115 @@ loginForm.addEventListener("submit", (event) => {
   }
 
   if (!isValid) {
-    showMessage("Please correct the highlighted fields.");
+    showMessage("Please correct the highlighted fields.", true);
     return;
   }
 
-  showMessage(
-    "Your details passed validation, but login is unavailable because authentication has not been connected yet.",
+  const selectedType = accountType.value;
+
+  if (!DASHBOARDS[selectedType]) {
+    showMessage("Invalid account type selected.", true);
+    return;
+  }
+
+  const isRider = selectedType === "rider";
+
+  const apiUrl = isRider
+    ? `${API_BASE_URL}/riders/login`
+    : `${API_BASE_URL}/vendors/login`;
+
+  const submitButton = loginForm.querySelector(
+    'button[type="submit"], input[type="submit"]',
   );
+
+  if (submitButton) submitButton.disabled = true;
+
+  showMessage("Signing you in...");
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        accountType: selectedType,
+      }),
+    });
+
+    const responseText = await response.text();
+    let data;
+
+    try {
+      data = responseText ? JSON.parse(responseText) : {};
+    } catch {
+      throw new Error(
+        `Invalid server response (HTTP ${response.status}). Check the backend terminal.`,
+      );
+    }
+
+    if (!response.ok) {
+      throw new Error(
+        data.message || `Login failed (HTTP ${response.status}).`,
+      );
+    }
+
+    const account = isRider ? data.rider : data.vendor;
+
+    if (!data.token || !account) {
+      throw new Error(
+        `The server did not return the expected ${isRider ? "rider" : "vendor"} account.`,
+      );
+    }
+
+    if (isRider) {
+      // Keep the rider session separate from the vendor session.
+      localStorage.setItem("paucekRiderToken", data.token);
+      localStorage.setItem("paucekRider", JSON.stringify(data.rider));
+
+      // A pending rider may log in, but cannot accept deliveries
+      // until approved by the administrator.
+      if (data.rider.approvalStatus === "Pending") {
+        showMessage(
+          "Login successful. Your rider account is awaiting approval.",
+        );
+      }
+    } else {
+      localStorage.setItem("paucekToken", data.token);
+      localStorage.setItem("paucekVendor", JSON.stringify(data.vendor));
+    }
+
+    window.location.href = DASHBOARDS[selectedType];
+  } catch (error) {
+    console.error("Login error:", error);
+
+    if (error.message === "Failed to fetch") {
+      showMessage(
+        "Cannot connect to the backend. Make sure the server is running.",
+        true,
+      );
+    } else {
+      showMessage(
+        error.message || "Something went wrong. Please try again.",
+        true,
+      );
+    }
+  } finally {
+    if (submitButton) submitButton.disabled = false;
+  }
 });
 
-googleSignInButton.addEventListener("click", () => {
-  showMessage(
-    "Google sign-in is not configured yet. Connect an authentication provider before using this option.",
-  );
-});
+if (googleSignInButton) {
+  googleSignInButton.addEventListener("click", () => {
+    showMessage("Google sign-in is not configured yet.", true);
+  });
+}
 
-forgotPasswordLink.addEventListener("click", (event) => {
-  event.preventDefault();
-
-  showMessage(
-    "Password recovery is not available yet. It will work after authentication is configured.",
-  );
-});
+if (forgotPasswordLink) {
+  forgotPasswordLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    showMessage("Password recovery is not available yet.", true);
+  });
+}
