@@ -4,8 +4,11 @@
 // Paucek Deliveries - Vendor Profile
 // =====================================
 
-const API_URL = "http://localhost:5000/api/vendors/me";
-const LOGIN_URL = "http://localhost:5000/pages/login.html";
+// Live Render backend API
+const API_URL = "https://paucek-delivery.onrender.com/api/vendors/me";
+
+// Keep login navigation on the Vercel frontend
+const LOGIN_URL = "/pages/login.html";
 
 const profileForm = document.getElementById("profileForm");
 const firstNameInput = document.getElementById("firstName");
@@ -348,7 +351,7 @@ document.addEventListener("click", (event) => {
     menuToggle.setAttribute("aria-expanded", "false");
   }
 });
-
+r
 // =====================================
 // Footer year
 // =====================================

@@ -10,11 +10,13 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 const accountTypeError = document.getElementById("account-type-error");
 
-const API_BASE_URL = "http://localhost:5000/api";
+// Live Render backend API
+const API_BASE_URL = "https://paucek-delivery.onrender.com/api";
 
+// Keep dashboard navigation on the Vercel frontend
 const DASHBOARDS = {
-  merchant: "http://localhost:5000/dashboard/vendorDashboard.html",
-  rider: "http://localhost:5000/dashboard/riderDashboard.html",
+  merchant: "/dashboard/vendorDashboard.html",
+  rider: "/dashboard/riderDashboard.html",
 };
 
 function clearErrors() {
@@ -31,6 +33,7 @@ function showMessage(message, isError = false) {
   formMessage.style.color = isError ? "#dc2626" : "#15803d";
 }
 
+// Show or hide password
 togglePassword.addEventListener("click", () => {
   const showPassword = passwordInput.type === "password";
 
@@ -39,6 +42,7 @@ togglePassword.addEventListener("click", () => {
   togglePassword.setAttribute("aria-pressed", String(showPassword));
 });
 
+// Handle login submission
 loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -117,7 +121,7 @@ loginForm.addEventListener("submit", async (event) => {
       data = responseText ? JSON.parse(responseText) : {};
     } catch {
       throw new Error(
-        `Invalid server response (HTTP ${response.status}). Check the backend terminal.`,
+        `Invalid server response (HTTP ${response.status}). Check the backend logs.`,
       );
     }
 
@@ -131,7 +135,9 @@ loginForm.addEventListener("submit", async (event) => {
 
     if (!data.token || !account) {
       throw new Error(
-        `The server did not return the expected ${isRider ? "rider" : "vendor"} account.`,
+        `The server did not return the expected ${
+          isRider ? "rider" : "vendor"
+        } account.`,
       );
     }
 
@@ -140,7 +146,7 @@ loginForm.addEventListener("submit", async (event) => {
       localStorage.setItem("paucekRiderToken", data.token);
       localStorage.setItem("paucekRider", JSON.stringify(data.rider));
 
-      // A pending rider may log in, but cannot accept deliveries
+      // Pending riders can log in but cannot accept deliveries
       // until approved by the administrator.
       if (data.rider.approvalStatus === "Pending") {
         showMessage(
@@ -152,13 +158,14 @@ loginForm.addEventListener("submit", async (event) => {
       localStorage.setItem("paucekVendor", JSON.stringify(data.vendor));
     }
 
+    // Redirect to the appropriate Vercel dashboard.
     window.location.href = DASHBOARDS[selectedType];
   } catch (error) {
     console.error("Login error:", error);
 
-    if (error.message === "Failed to fetch") {
+    if (error.message === "Failed to fetch" || error instanceof TypeError) {
       showMessage(
-        "Cannot connect to the backend. Make sure the server is running.",
+        "Cannot connect to the backend. Please try again shortly.",
         true,
       );
     } else {
@@ -172,12 +179,14 @@ loginForm.addEventListener("submit", async (event) => {
   }
 });
 
+// Google sign-in placeholder
 if (googleSignInButton) {
   googleSignInButton.addEventListener("click", () => {
     showMessage("Google sign-in is not configured yet.", true);
   });
 }
 
+// Forgot-password placeholder
 if (forgotPasswordLink) {
   forgotPasswordLink.addEventListener("click", (event) => {
     event.preventDefault();

@@ -1,7 +1,7 @@
 "use strict";
 
 // Paucek Deliveries — Rider Dashboard
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://paucek-delivery.onrender.com/api";
 const DASHBOARD_URL = "/dashboard/riderDashboard.html";
 
 let riderToken = localStorage.getItem("paucekRiderToken");

@@ -1,3 +1,4 @@
+
 const registerForm = document.getElementById("registration-form");
 const registerMessage = document.getElementById("register-message");
 
@@ -16,7 +17,9 @@ const originalButtonText = submitButton
   ? submitButton.textContent.trim()
   : "Create Account";
 
-const API_BASE_URL = "http://localhost:5000/api";
+// Live Render backend API
+const API_BASE_URL = "https://paucek-delivery.onrender.com/api";
+
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const errorIds = [
@@ -253,7 +256,7 @@ registerForm.addEventListener("submit", async (event) => {
     console.error("Registration request failed:", error);
 
     showMessage(
-      "Unable to connect to the server. Make sure the Paucek backend is running and try again.",
+      "Unable to connect to the server. Please try again shortly.",
     );
   } finally {
     if (submitButton) {
@@ -264,18 +267,20 @@ registerForm.addEventListener("submit", async (event) => {
 });
 
 // Google sign-up is not connected yet.
-googleSignUpButton.addEventListener("click", () => {
-  const selectedAccount = registerForm.querySelector(
-    'input[name="accountType"]:checked',
-  );
+if (googleSignUpButton) {
+  googleSignUpButton.addEventListener("click", () => {
+    const selectedAccount = registerForm.querySelector(
+      'input[name="accountType"]:checked',
+    );
 
-  if (!selectedAccount) {
-    showError("account-type-error", "Select Vendor or Rider first.");
-    showMessage("Choose your account type to continue.");
-    return;
-  }
+    if (!selectedAccount) {
+      showError("account-type-error", "Select Vendor or Rider first.");
+      showMessage("Choose your account type to continue.");
+      return;
+    }
 
-  showMessage(
-    "Google sign-up is not configured yet. No account has been created.",
-  );
+    showMessage(
+      "Google sign-up is not configured yet. No account has been created.",
+    );
+  });
 });
