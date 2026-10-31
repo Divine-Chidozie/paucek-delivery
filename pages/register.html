@@ -6,6 +6,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -36,6 +37,7 @@
         </div>
 
         <form id="registration-form" novalidate>
+          <!-- Account Type -->
           <fieldset class="account-type-container">
             <legend>I'm creating an account as</legend>
 
@@ -63,6 +65,7 @@
             ></span>
           </fieldset>
 
+          <!-- Google Sign Up -->
           <button class="google-btn" id="google-sign-up" type="button">
             <svg class="google-icon" viewBox="0 0 48 48" aria-hidden="true">
               <path
@@ -82,6 +85,7 @@
                 d="M24 48c6.48 0 11.93-2.13 15.91-5.87l-7.64-5.93c-2.12 1.42-4.84 2.27-8.27 2.27-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"
               />
             </svg>
+
             <span>Sign up with Google</span>
           </button>
 
@@ -91,8 +95,10 @@
             <span></span>
           </div>
 
+          <!-- First Name -->
           <div class="form-field">
             <label for="firstname">First name</label>
+
             <input
               id="firstname"
               type="text"
@@ -101,6 +107,7 @@
               autocomplete="given-name"
               required
             />
+
             <span
               id="firstname-error"
               class="field-error"
@@ -108,8 +115,10 @@
             ></span>
           </div>
 
+          <!-- Last Name -->
           <div class="form-field">
             <label for="lastname">Last name</label>
+
             <input
               id="lastname"
               type="text"
@@ -118,6 +127,7 @@
               autocomplete="family-name"
               required
             />
+
             <span
               id="lastname-error"
               class="field-error"
@@ -125,8 +135,10 @@
             ></span>
           </div>
 
+          <!-- Email -->
           <div class="form-field">
             <label for="email">Email address</label>
+
             <input
               id="email"
               type="email"
@@ -135,6 +147,7 @@
               autocomplete="email"
               required
             />
+
             <span
               id="email-error"
               class="field-error"
@@ -142,8 +155,10 @@
             ></span>
           </div>
 
+          <!-- Rider Phone Number -->
           <div class="form-field" id="phone-field" hidden>
             <label for="phone">Phone number</label>
+
             <input
               id="phone"
               type="tel"
@@ -152,6 +167,7 @@
               autocomplete="tel"
               maxlength="30"
             />
+
             <span
               id="phone-error"
               class="field-error"
@@ -159,8 +175,10 @@
             ></span>
           </div>
 
+          <!-- Password -->
           <div class="form-field">
             <label for="password">Password</label>
+
             <div class="password-wrapper">
               <input
                 id="password"
@@ -171,6 +189,7 @@
                 minlength="8"
                 required
               />
+
               <button
                 type="button"
                 class="password-toggle"
@@ -181,7 +200,9 @@
                 Show
               </button>
             </div>
-            <span class="field-hint">Use at least 8 characters.</span>
+
+            <span class="field-hint"> Use at least 8 characters. </span>
+
             <span
               id="error-password"
               class="field-error"
@@ -189,8 +210,10 @@
             ></span>
           </div>
 
+          <!-- Confirm Password -->
           <div class="form-field">
             <label for="confirm-password">Confirm password</label>
+
             <div class="password-wrapper">
               <input
                 id="confirm-password"
@@ -200,6 +223,7 @@
                 autocomplete="new-password"
                 required
               />
+
               <button
                 type="button"
                 class="password-toggle"
@@ -210,6 +234,7 @@
                 Show
               </button>
             </div>
+
             <span
               id="confirm-password-error"
               class="field-error"
@@ -217,11 +242,14 @@
             ></span>
           </div>
 
+          <!-- Terms and Conditions -->
           <div class="terms-field">
             <label class="terms-label" for="terms">
               <input id="terms" type="checkbox" name="terms" required />
+
               <span>I agree to the terms and conditions.</span>
             </label>
+
             <span
               id="terms-error"
               class="field-error"
@@ -229,8 +257,10 @@
             ></span>
           </div>
 
+          <!-- Registration Message -->
           <p id="register-message" class="form-message" aria-live="polite"></p>
 
+          <!-- Submit -->
           <button class="btn btn-primary" type="submit">Create Account</button>
         </form>
 
