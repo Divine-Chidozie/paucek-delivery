@@ -1,22 +1,11 @@
 {
   "name": "paucek",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Paucek Deliveries Backend API",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Divine-Chidozie/paucek-delivery.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Divine-Chidozie/paucek-delivery/issues"
-  },
-  "homepage": "https://github.com/Divine-Chidozie/paucek-delivery#readme",
-  "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
